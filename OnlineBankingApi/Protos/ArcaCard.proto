@@ -1,0 +1,154 @@
+syntax = "proto3";
+
+option csharp_namespace = "ArcaCardAttachmentService";
+
+package ArcaCard;
+
+import "google/protobuf/wrappers.proto";
+
+// The arca card service definition.
+service ArcaCard {
+// attach card
+rpc AtachCardOrder (CardAttachmentRequest) returns (CardAttachmentResponse);
+// attach card completion
+rpc AtachCardOrderCompletion (CardAttachmentCompletionRequest) returns (CardAttachmentCompletionResponse);
+//Delete Attached Card
+rpc DeleteAttachedCardById (DeleteAttachedCardRequest) returns  (DeleteAttachedCardResponse);
+//Get Attached Cards
+rpc GetAttachedCards (AttachedCardRequest) returns  (AttachedCardResponse);
+//Validate Attached Cards
+rpc ValidateAttachedCards (AttachedCardValidationRequest) returns  (AttachedCardValidationResponse);
+//Payment By Binding
+rpc ArcaOrderBindingPayment (CardBindingPaymentRequest) returns  (CardBindingPaymentResponse);
+//Get Merchant Account Number by order type
+rpc GetMerchantAccountNumberByOrderType (AttachedCardOrderTypeRequest) returns  (AccountNumberByOrderTypeResponse);
+//Save Attach Card Payment Order Details
+rpc SaveAttachedCardOrderDetails (OrderDetailsRequest) returns (OrderDetailsResponse);
+//Reverse Payment Order
+ rpc ReverseOrderById (ReverseOrderRequest) returns (ReverseOrderResponse);
+}
+
+// The request message containing the attach request model
+message CardAttachmentRequest  {
+  int32 ID = 1;
+  int32 UserId = 2;
+  uint64 CustomerNumber = 3;
+  string MdOrder = 4;
+  uint64 CardNumber = 5;
+  string ExpireYear = 6;
+  string ExpireMonth = 7;
+  string CardHolderName = 8;
+  string BindingId = 9;
+  int32 BankId = 10;
+  int32 Quality = 11;
+  string Language = 12;
+  string PageView = 13;
+  int32 Cvc = 14;
+}
+
+// The response message containing the register response model
+message CardAttachmentResponse {
+  google.protobuf.StringValue  Redirect = 1;
+  google.protobuf.StringValue  AcsUrl = 2;
+  google.protobuf.StringValue  PaReq = 3;
+}
+
+// The response message containing the register completion response model
+message CardAttachmentCompletionRequest {
+  int32 UserId = 1;
+  string MdOrder = 2;
+}
+
+// The response message containing the register completion response model
+message CardAttachmentCompletionResponse {
+  bool Attached = 1;
+}
+
+message DeleteAttachedCardRequest {
+  int32 Id = 1;
+}
+
+// The response message containing the register completion response model
+message DeleteAttachedCardResponse {
+  bool Deleted = 1;
+}
+
+message AttachedCardRequest {
+  int32 UserId = 1;
+}
+
+message AttachedCardResponse {
+  repeated AttachedCard AttachedCards = 1;
+}
+
+message AttachedCard {
+  int32 Id= 1;
+  string CardNumber = 2;
+  string CardHolderName= 3;
+  string ExpireDateString = 4;
+  string BankName = 5;
+}
+
+message AttachedCardValidationRequest {
+  int32 UserId = 1;
+}
+
+message AttachedCardValidationResponse {
+  bool IsValid = 1;
+  string Message = 2;
+}
+
+message CardBindingPaymentRequest {
+  string MdOrder = 1;
+  string BindingId = 2;
+  string Language = 3;
+  int32 UserId = 4;
+  int32 Amount = 5;
+  string PageView = 6;
+  uint64 CustomerNumber = 7;
+  string Currency = 8;
+  OrderTypeEnum OrderType = 9;
+  enum OrderTypeEnum {
+    ORDER_TYPE_ENUM_NotDefined = 0;
+    ORDER_TYPE_ENUM_RaTransfer = 1;
+    ORDER_TYPE_ENUM_LoanMature = 2;
+    ORDER_TYPE_ENUM_CommunalPayment = 3;
+    ORDER_TYPE_ENUM_CardToCardOrder = 4;
+  }
+   int32 OrderSubType = 10;
+}
+
+message CardBindingPaymentResponse {
+  bool Payed = 1;
+  int32 CardId = 2;
+  string MdOrder = 3;
+}
+
+message AttachedCardOrderTypeRequest {
+   int32 OrderType = 1;
+   int32 OrderSubType = 2;
+   string Currency = 3;
+}
+
+message AccountNumberByOrderTypeResponse {
+   string AccountNumber = 1;
+}
+
+message OrderDetailsRequest {
+  int64 DocID = 1;
+  int32 CardId = 2;
+  string MdOrder = 3;
+}
+
+message OrderDetailsResponse {
+  bool Saved = 1;
+}
+
+message ReverseOrderRequest {
+  string MdOrder = 1;
+  int32 UserId = 2;
+}
+
+message ReverseOrderResponse {
+  bool Reversed = 1;
+}

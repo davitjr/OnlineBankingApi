@@ -1,0 +1,1082 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OnlineBankingLibrary</name>
+    </assembly>
+    <members>
+        <member name="T:ACBAServiceReference.GetCustomerLinkedListResponseGetCustomerLinkedListResult">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerLinkedListResponseGetCustomerLinkedListResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerLinkedListResponseGetCustomerLinkedListResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:ACBAServiceReference.GetAparikCustomerFilialResponseGetAparikCustomerFilialResult">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetAparikCustomerFilialResponseGetAparikCustomerFilialResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetAparikCustomerFilialResponseGetAparikCustomerFilialResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:ACBAServiceReference.GetCustomerOldNumbersResponseGetCustomerOldNumbersResult">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerOldNumbersResponseGetCustomerOldNumbersResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerOldNumbersResponseGetCustomerOldNumbersResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:ACBAServiceReference.GetCustomerProductsResponseGetCustomerProductsResult">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerProductsResponseGetCustomerProductsResult.Any">
+            <remarks/>
+        </member>
+        <member name="P:ACBAServiceReference.GetCustomerProductsResponseGetCustomerProductsResult.Any1">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.TrustedUserHeader">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.TrustedUserHeader.UserName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.TrustedUserHeader.UserToken">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.Extension">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Extension.ExtensionType">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Extension.Name">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Extension.LocalizedName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Extension.Visible">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Extension.IsModelGenerationSupported">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ExtensionTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ExtensionTypeEnum.Delivery">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ExtensionTypeEnum.Render">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ExtensionTypeEnum.Data">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ExtensionTypeEnum.All">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.DocumentMapNode">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DocumentMapNode.Label">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DocumentMapNode.UniqueName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DocumentMapNode.Children">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ParameterValueOrFieldReference">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ParameterValue">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ParameterValue.Name">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ParameterValue.Value">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ParameterValue.Label">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.DataSourceCredentials">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourceCredentials.DataSourceName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourceCredentials.UserName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourceCredentials.Password">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.Warning">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Warning.Code">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Warning.Severity">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Warning.ObjectName">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Warning.ObjectType">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.Warning.Message">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ExecutionHeader">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionHeader.ExecutionID">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ReportMargins">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportMargins.Top">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportMargins.Bottom">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportMargins.Left">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportMargins.Right">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ReportPaperSize">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportPaperSize.Height">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportPaperSize.Width">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.PageSettings">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.PageSettings.PaperSize">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.PageSettings.Margins">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.DataSourcePrompt">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourcePrompt.Name">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourcePrompt.DataSourceID">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.DataSourcePrompt.Prompt">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ValidValue">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ValidValue.Label">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ValidValue.Value">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ReportParameter">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.Name">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.Type">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.TypeSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.Nullable">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.NullableSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.AllowBlank">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.AllowBlankSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.MultiValue">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.MultiValueSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.QueryParameter">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.QueryParameterSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.Prompt">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.PromptUser">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.PromptUserSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.Dependencies">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.ValidValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.ValidValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.ValidValues">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.DefaultValuesQueryBased">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.DefaultValuesQueryBasedSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.DefaultValues">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.State">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.StateSpecified">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ReportParameter.ErrorMessage">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ParameterTypeEnum">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterTypeEnum.Boolean">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterTypeEnum.DateTime">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterTypeEnum.Integer">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterTypeEnum.Float">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterTypeEnum.String">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ParameterStateEnum">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterStateEnum.HasValidValue">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterStateEnum.MissingValidValue">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterStateEnum.HasOutstandingDependencies">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.ParameterStateEnum.DynamicValuesUnavailable">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ExecutionInfo">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.HasSnapshot">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.NeedsProcessing">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.AllowQueryExecution">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.CredentialsRequired">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ParametersRequired">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ExpirationDateTime">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ExecutionDateTime">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.NumPages">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.Parameters">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.DataSourcePrompts">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.HasDocumentMap">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ExecutionID">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ReportPath">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.HistoryID">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.ReportPageSettings">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo.AutoRefreshInterval">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ExecutionInfo2">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ExecutionInfo2.PageCountMode">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.PageCountMode">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.PageCountMode.Actual">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.PageCountMode.Estimate">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.ServerInfoHeader">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ServerInfoHeader.ReportServerVersionNumber">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ServerInfoHeader.ReportServerEdition">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ServerInfoHeader.ReportServerVersion">
+            <remarks/>
+        </member>
+        <member name="P:ReportingService.ServerInfoHeader.ReportServerDateTime">
+            <remarks/>
+        </member>
+        <member name="T:ReportingService.SortDirectionEnum">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.SortDirectionEnum.None">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.SortDirectionEnum.Ascending">
+            <remarks/>
+        </member>
+        <member name="F:ReportingService.SortDirectionEnum.Descending">
+            <remarks/>
+        </member>
+        <member name="P:XBManagement.AuthorizedCustomer.UserId">
+            <summary>
+            Օգտագործողի ունիկալ համար
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:XBManagement.AuthorizedCustomer.IsLastConfirmer" -->
+        <member name="P:XBSInfo.AuthorizedCustomer.UserId">
+            <summary>
+            Օգտագործողի ունիկալ համար
+            </summary>
+        </member>
+        <!-- Badly formed XML comment ignored for member "P:XBSInfo.AuthorizedCustomer.IsLastConfirmer" -->
+        <member name="P:XBS.ArcaCardsTransactionOrder.ProductId">
+            <summary>
+            Քարտի ունիկալ համար
+            </summary>
+        </member>
+        <member name="P:XBS.Card.CardStatus">
+            <summary>
+            Քարտի կարգավիճակ
+            </summary>
+        </member>
+        <member name="P:XBS.Card.Password">
+            <summary>
+            գաղտնաբառ
+            </summary>
+        </member>
+        <member name="P:XBS.Card.CardSMSPhone">
+            <summary>
+            SMS հեռախոսհամար
+            </summary>
+        </member>
+        <member name="P:XBS.Card.CardEmail">
+            <summary>
+            Քարտին կցված էլ. փոստ
+            </summary>
+        </member>
+        <member name="P:XBS.Card.ReportReceivingType">
+            <summary>
+            Քաղվածքի ստացման եղանակ
+            </summary>
+        </member>
+        <member name="P:XBS.Card.CashBack">
+            <summary>
+            կուտակված CASHBACK մինչև հարկումը`AMEX CASHBACK, AMEX BLUE քարտերի դեպքում
+            </summary>
+        </member>
+        <member name="P:XBS.Card.BonusBalance">
+            <summary>
+            կուտակված MR` AMEX GOLD, AMEX BLUE քարտերի դեպքում
+            </summary>
+        </member>
+        <member name="P:XBS.Card.CVVNote">
+            <summary>
+            Հաճախորդի կողմից մուտքագրված CVV նշում
+            </summary>
+        </member>
+        <member name="P:XBS.Card.FilialName">
+            <summary>
+            Քարտի սպասարկող մասնաճյուղի անվանում
+            </summary>
+        </member>
+        <member name="P:XBS.CreditLine.HasContractFile">
+            <summary>
+            Կցված պայմանագրի առկայություն
+            </summary>
+        </member>
+        <member name="P:XBS.CreditLine.NextRepaymentDate">
+            <summary>
+            Հաջորդ վճարման ամսաթիվ
+            </summary>
+        </member>
+        <member name="P:XBS.CreditLine.NextRepaymentAmount">
+            <summary>
+            Հաջորդ վճարման գումար
+            </summary>
+        </member>
+        <member name="P:XBS.AuthorizedCustomer.UserId">
+            <summary>
+            Օգտագործողի ունիկալ համար
+            </summary>
+        </member>
+        <member name="P:XBS.AuthorizedCustomer.IsLastConfirmer">
+            <summary>
+            true` եթե օգտագործողը վերջին հաստատման իրավունք ունեցող է, false՝ հակառակ դեպքում
+            </summary>
+        </member>
+        <member name="P:XBS.AuthorizedCustomer.IsEmployee">
+            <summary>
+            Եթե հաճախորդն աշխատակից է True հ․դ․ False
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.RegistrationProductType">
+            <summary>
+            Հաճախորդի կողմից գրանցման ժամանակ ներկայացվող բանկային պրոդուկտի տեսակներ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationProductType.CardNumber">
+            <summary>
+            Քարտի համար
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationProductType.AccountNumber">
+            <summary>
+            Հաշվեհամար
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.TypeOfPhysicalCustomerRegistration">
+            <summary>
+            Ֆիզիկական անձ հաճախորդի գրանցման տեսակներ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.TypeOfPhysicalCustomerRegistration.ByPersonalInformation">
+            <summary>
+            Գրանցում ID քարտով/անձնագրի համարով կամ ՀԾՀ-ով
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.TypeOfPhysicalCustomerRegistration.ByBankProductInformation">
+            <summary>
+            Գրանցում քարտով/հաշվի համարով
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.ClientWithCustomerQuality">
+            <summary>
+            Դիմողը ունի բանկում հաճախորդ կարգավիճակ և ամբողջական լրացված տվյալներ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.ExistingOnlineUser">
+            <summary>
+            Հաճախորդը ունի գրանցված օնլայն հաշիվ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.ClientHavingCustomerQualityWithInsufficientData">
+            <summary>
+            Դիմողը ունի բանկում հաճախորդ կարգավիճակ, սակայն տվյալները ամբողջական չեն
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.ClientWithNonCustomerQuality">
+            <summary>
+            Դիմողը ունի բանկում հաճախորդ կարգավիճակից տարբերվող այլ կարգավիճակ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.NotFoundClient">
+            <summary>
+            Դիմողը գտնված չէ Ekeng համակարգում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.RegistrationResult.UpdateExpired">
+            <summary>
+            Հաճախորդի տվյալները ենթակա են թարմեցման
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.DocumentType">
+            <summary>
+            Փաստաթղթերի տեսակներ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.DocumentType.RApassport">
+            <summary>
+            ՀՀ անձնագիր
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.DocumentType.IdentifierCard">
+            <summary>
+            Նույնականացման քարտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.DocumentType.SocialServiceNumber">
+            <summary>
+            Հանրային ծառայության համարանիշ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.DocumentType.BiometricPassport">
+            <summary>
+            ՀՀ բիոմետրիկ անձնագիր
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationResult.NonCustomer">
+            <summary>
+            Բանկում կարգավիճակ չունեցող հաճախորդ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationResult.CustomerWithNoAttachments">
+            <summary>
+            Բանկում կարգավիճակ ունեցող հաճախորդը չունի կցված փաստթղթեր
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationResult.CustomerWithAttachment">
+            <summary>
+            Բանկում կարգավիճակ ունեցող հաճախորդ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationResult.CustomerWithOnlineBanking">
+            <summary>
+            Հաճախորդը, որը ունի օնլայն բանկինգ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationInfoType.Photo">
+            <summary>
+            Նկար
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationInfoType.Document">
+            <summary>
+            Փաստաթուղթ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.CustomerAuthenticationInfoType.Empty">
+            <summary>
+            Դատարկ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.NotDefined">
+            <summary>
+            Չնշված
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.HBServletRequestOrder">
+            <summary>
+            Հաստատում/ուղարկում է տոկենի ապաբլոկավորման հայտը
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.PaymentOrder">
+            <summary>
+            Փոխանցում ՀՀ տարածքում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.PlasticCardOrder">
+            <summary>
+            Նոր քարտի հայտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.UtilityPaymentOrder">
+            <summary>
+            Կոմունալ վճարում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.MatureOrder">
+            <summary>
+            Վարկի մարում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.ReferenceOrder">
+            <summary>
+            Տեղեկանքի ստացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.LoanProductOrder">
+            <summary>
+            Ավանդի գրավով վարկի ձևակերպում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.ReceivedFastTransferPaymentOrder">
+            <summary>
+            Արագ համակարգերով ստացված փոխանցումներ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.AccountClosingOrder">
+            <summary>
+            Հաշվի փակում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.SwiftCopyOrder">
+            <summary>
+            SWIFT հաղորդագրության պատճենի ստացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CredentialOrder">
+            <summary>
+            Լիազորագրի մուտքագրման հայտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.DepositOrder">
+            <summary>
+            Ավանդի ձևակերպում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.AccountOrder">
+            <summary>
+            Ընթացիկ հաշվի բացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CashOrder">
+            <summary>
+            Գումարի ստացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CreditLineTerminationOrder">
+            <summary>
+            Վարկային գծի դադարեցում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CardClosingOrder">
+            <summary>
+            Քարտի փակում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CustomerDataOrder">
+            <summary>
+            Տվյալների խմբագրում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.StatmentByEmailOrder">
+            <summary>
+            Քաղվածքի էլեկտրոնային ստացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.DepositTerminationOrder">
+            <summary>
+            Ավանդի դադարեցում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.ReestrTransferOrder">
+            <summary>
+            Կանխիկ մուտք ռեեստրով
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.ArcaCardsTransactionOrder">
+            <summary>
+            Քարտի բլոկավորման/ապաբլոկավորման հայտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CardToCardOrder">
+            <summary>
+            Քարտից քարտ փոխանցման հայտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.CardLimitChangeOrder">
+            <summary>
+            Քարտի սահմանաչափերի փոփոխման հայտ
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.PeriodicPaymentOrder">
+            <summary>
+            Պարբերական փոխանցում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.InternationalPaymentOrder">
+            <summary>
+            Միջազգային փոխացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.AccountReOpenOrder">
+            <summary>
+            Ընթացիկ հաշվի վերաբացում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.PlasticCardSmsServiceOrder">
+            <summary>
+            Քարտի SMS ծառայություն 
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.RemovalOrder">
+            <summary>
+            Գործարքից հրաժարում
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.ApprovalOrderType.MultipleOrders">
+            <summary>
+            Միաժամանակ 1-ից ավելի գործարքների հաստատում
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegistrationManager.RegParams">
+            <summary>
+            Օգտագործվում է գրացման ամենասկզբում, երբ հարցում է գալիս, որը պարունակում է, թե ինչպիսի եղանակով է ցանկանում հաճախորդը գրանցվել
+            Ֆիզիկական անձ հաճախորդի գրանցման անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegistrationManager.CustomerData">
+            <summary>
+            Հաճախորդի գրանցման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.#ctor(OnlineBankingLibrary.Services.ACBAOperationService,OnlineBankingLibrary.Services.XBService,OnlineBankingLibrary.Services.XBManagementService,OnlineBankingLibrary.Services.SMSMessagingService,OnlineBankingLibrary.Services.XBInfoService,OnlineBankingLibrary.Models.OnlineBankingRegistrationManager,OnlineBankingLibrary.Utilities.CacheManager)">
+            <summary>
+            Ինիցիալացնում է ֆիզիկական անձի գրանցման համար անհրաժեշտ տվյալները։
+            </summary>
+            <param name="regParams"></param>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.RegistrateByPersonalInformation">
+            <summary>
+            Հաճախորդի գրանցում անձնական տվյալներով
+            Նույնականացնում է ֆիզիկական անձին անձնական տվյալների հիման վրա։
+            Եթե Նորք/Էկենգից վերադարձված հաճախորդը առկա չէ բանկի բազայում, ապա գրանցում է։ 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.RegistrateByBankProductInformation">
+            <summary>
+            Հաճախորդի գրանցում քարտով կամ ընթացիկ հաշվով
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.RegistrateByIdentificationResult(OnlineBankingLibrary.RegistrationResult)">
+            <summary>
+            Կախված իդենտիֆիկացիայի արդյունքից պահպանում է հաճախորդի տվյալները հետագա գրանցումը շարունակելու համար
+            </summary>
+            <param name="registrationResult"></param>
+            <returns>
+            Վերադարձնում է ունիկալ կոդ, որով հաջորդ հարցումների ժամանակ հնարավոր է ունենալ արդեն պահպանված տվյալները
+            </returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.SaveCustomerData">
+            <summary>
+            Պահպանում է գրանցվողի սկզբնական տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.CustomerRegistrationManager.AddPhoneForCustomer(System.String,System.UInt64)">
+            <summary>
+            Ավելացնում է հեռախոսահամարը հաճախորդի տվյալներ մեջ
+            </summary>
+            <param name="phoneNumber"></param>
+            <param name="customerNumber"></param>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.CustomerRegParams">
+            <summary>
+            Ֆիզիկական անձ հաճախորդների գրանցման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegParams.RegType">
+            <summary>
+            Հաճախորդի կողմից ընտրված գրանցման տեսակ 
+            Օր․՝ գրանցում անձնական ինֆորմացիայի կամ բանկի կողմից արդեն տրամադրված պրոդուկտի տվյալների միջոցով
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegParams.DocumentType">
+            <summary>
+            Հաճախորդի կողմից անձնական ինֆորմացիայի միջոցով գրանցվելու ժամանակ ընտրված փաստաթղթի տեսակ
+            Օր․՝ անձնագիր կամ սոցիալական քարտ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegParams.DocumentValue">
+            <summary>
+            Հաճախորդի կողմից անձնական ինֆորմացիայի միջոցով գրանցվելու ժամանակ ընտրված փաստաթղթի իդենտիֆիկացնող տվյալ
+            Օր․՝ անձնագրի համար կամ հանրային ծառայության համարանիշ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegParams.ProductType">
+            <summary>
+            Հաճախորդի կողմից բանկային պրոդուկտի միջոցով գրանցման ժամանակ ընտրված բանկային պրոդուկտի տեսակ
+            Օր․՝ քարտ կամ հաշիվ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerRegParams.ProductValue">
+            <summary>
+            Հաճախորդի կողմից բանկային պրոդուկտի միջոցով գրանցման ժամանակ ընտրված բանկային պրոդուկտի տվյալ
+            Օր․՝ քարտի համար կամ հաշվեհամար
+            </summary>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.OnlineBankingRegistrationManager.GenerateAcbaOnline(OnlineBankingLibrary.Models.RegistrationCustomerData)">
+            <summary>
+            Գեներացնում է օնլայն բանկինգ
+            </summary>
+            <param name="customerData"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Models.OnlineBankingRegistrationManager.ValidateAcbaOnlineCreating(OnlineBankingLibrary.Models.RegistrationCustomerData)">
+            <summary>
+            Մինչ օնլայն բանկինգի գրանցման ստուգումներ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.RegistrationCustomerData">
+            <summary>
+            Հաճախորդի գրանցման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.CustomerNumber">
+            <summary>
+            Հաճախորդի համար
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.Email">
+            <summary>
+            Հաճախորդի էլեկտրոնային հասցե
+            Այս դաշտով պահվում է "հաճախորդ" կարգավիճակով գրանցվողի մեր բազայի էլեկտրոնային հասցեն, 
+            ինչպես նաև "հաճախորդ"-ից տարբվեր կարգավիճակով գրանցվողի իր կողմից նշված էլեկտոնային հասցեն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.PhoneNumber">
+            <summary>
+            Հաճախորդի հեռախոսահամար
+            Այս դաշտով պահվում է "հաճախորդ" կարգավիճակով գրանցվողի մեր բազայի հեռախոսահամարը, 
+            ինչպես նաև "հաճախորդ"-ից տարբվեր կարգավիճակով գրանցվողի իր կողմից նշված հեռախոսահամարը
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.UserName">
+            <summary>
+            Login
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.RePassword">
+             <summary>
+            Կրկնակի մուտքագրված  գաղտնաբառ  (Reentered Password)
+             </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.RegistrationToken">
+            <summary>
+            Գրանցման պրոցեսի ունիկալ տոկեն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.VerificationCode">
+            <summary>
+            Վերիֆիկացիայի կոդ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.RegistrationCustomerData.CustomerQuality">
+            <summary>
+            Գրանցվողի հաճախորդի կարգավիճակ
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.CustomerTokenInfo">
+            <summary>
+            Հաճախորդի տոկենի ստացման, հեռացման, փոխարինման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.SessionId">
+            <summary>
+            Unique identificator
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.SourceType">
+            <summary>
+            Source Type
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.Language">
+            <summary>
+            Language
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.Otp">
+            <summary>
+            One Time Password
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.Checked">
+            <summary>
+            Check if Otp verification is passed or not
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.CustomerNumber">
+            <summary>
+            Customer Number
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.UserId">
+            <summary>
+            User Identificator
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenInfo.PhoneNumber">
+            <summary>
+            Customer Phone Number
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.CustomerTokenResponse">
+            <summary>
+            Հաճախորդի ակտիվ տոկենների ցուցադրման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenResponse.IsNewHbUser">
+            <summary>
+            Is New Gemalto Hb User
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerTokenResponse.Tokens">
+            <summary>
+            Customer All Active Tokens
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.CustomerToken">
+            <summary>
+            Հաճախորդի ակտիվ տոկենների ցուցադրման համար անհրաժեշտ տվյալներ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerToken.TokenSerial">
+            <summary>
+            Token Number
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.CustomerToken.DeviceTypeDescription">
+            <summary>
+            Device Description
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.Models.FastOverdraftDates">
+            <summary>
+            Արագ օվերդրաֆտի սկիզբ և վերջ հարցման պատասխան
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.FastOverdraftDates.StartDate">
+            <summary>
+            Սկիզբ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.FastOverdraftDates.EndDate">
+            <summary>
+            Վերջ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.JointCustomer.CustomerNumber">
+            <summary>
+            3-րդ անձի հաճախորդի համար
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.JointCustomer.Part">
+            <summary>
+            Մասնաբաժին
+            </summary>
+        </member>
+        <member name="P:OnlineBankingLibrary.Models.JointCustomer.FullName">
+            <summary>
+            Անուն, ազգանուն
+            </summary>
+        </member>
+        <member name="T:OnlineBankingLibrary.Services.ExportFormat">
+            <summary>
+            File Export Formats.
+            </summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.Services.ExportFormat.Image">
+            <summary>Image</summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.Services.ExportFormat.PDF">
+            <summary>PDF</summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.Services.ExportFormat.Excel">
+            <summary>Excel</summary>
+        </member>
+        <member name="F:OnlineBankingLibrary.Services.ExportFormat.Word">
+            <summary>Word</summary>
+        </member>
+        <member name="M:OnlineBankingLibrary.Services.ReportService.GetExportFormatString(OnlineBankingLibrary.Services.ExportFormat)">
+            <summary>
+            Gets the string export format of the specified enum.
+            </summary>
+            <param name="f">export format enum</param>
+            <returns>enum equivalent string export format</returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Services.ReportService.GetExportFormatEnumeration(System.String)">
+            <summary>
+            Gets the enum export format of the specified extension.
+            </summary>
+            <param name="f">format string</param>
+            <returns>equivalent enum export format</returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Services.XBService.HasUploadedContract(System.String,System.Byte)">
+            <summary>
+            Պայմանագրի առկայության ստուգում
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="type">0 վարկի դեպքում, 1 վարկային գծի դեպքում</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingLibrary.Utilities.CacheHelper.SetCustomerTokenInfo(OnlineBankingLibrary.Models.CustomerTokenInfo)">
+            <summary>
+            Save Customer Token Info in cache with session Id
+            </summary>
+            <param name="customerTokenInfo"> Customer Token Operation Information</param>
+        </member>
+        <member name="M:OnlineBankingLibrary.Utilities.CacheHelper.GetCustomerTokenInfo">
+            <summary>
+            Get Customer Token Info with session Id from cache
+            </summary>
+            <returns></returns>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,18 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.31022.994",
+  "ExtendedData": {
+    "inputs": [
+      "http://localhost/ExternalBankingSecurityService/Services/NotificationService.svc"
+    ],
+    "collectionTypes": [
+      "System.Collections.Generic.Dictionary`2",
+      "System.Collections.Generic.List`1"
+    ],
+    "namespaceMappings": [
+      "*, PushNotificationService"
+    ],
+    "targetFramework": "netcoreapp2.1",
+    "typeReuseMode": "None"
+  }
+}

@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.705
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBankingApi", "OnlineBankingApi\OnlineBankingApi.csproj", "{00A85734-32AC-42C4-8525-F7F56D847944}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OnlineBankingLibrary", "OnlineBankingLibrary\OnlineBankingLibrary.csproj", "{EB95AC59-F0F1-4C72-AE66-ECF593D9A197}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{00A85734-32AC-42C4-8525-F7F56D847944}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{00A85734-32AC-42C4-8525-F7F56D847944}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{00A85734-32AC-42C4-8525-F7F56D847944}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{00A85734-32AC-42C4-8525-F7F56D847944}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EB95AC59-F0F1-4C72-AE66-ECF593D9A197}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EB95AC59-F0F1-4C72-AE66-ECF593D9A197}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EB95AC59-F0F1-4C72-AE66-ECF593D9A197}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EB95AC59-F0F1-4C72-AE66-ECF593D9A197}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA5299F2-CF6C-4BC4-B832-96538190A8C2}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 3
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://team1003:8080/tfs/acbaonlinecollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = OnlineBankingApi\\OnlineBankingApi.csproj
+		SccProjectName1 = OnlineBankingApi
+		SccLocalPath1 = OnlineBankingApi
+		SccProjectUniqueName2 = OnlineBankingLibrary\\OnlineBankingLibrary.csproj
+		SccProjectName2 = OnlineBankingLibrary
+		SccLocalPath2 = OnlineBankingLibrary
+	EndGlobalSection
+EndGlobal

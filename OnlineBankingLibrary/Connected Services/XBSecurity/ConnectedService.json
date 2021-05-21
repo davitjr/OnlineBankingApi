@@ -1,0 +1,24 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.31022.994",
+  "ExtendedData": {
+    "Uri": "https://xbsecurity-dev:4443/Services/OnlineBankingSecurityCas.svc",
+    "Namespace": "XBSecurity",
+    "SelectedAccessLevelForGeneratedClass": "Public",
+    "GenerateMessageContract": false,
+    "ReuseTypesinReferencedAssemblies": false,
+    "ReuseTypesinAllReferencedAssemblies": true,
+    "CollectionTypeReference": {
+      "Item1": "System.Collections.Generic.List`1",
+      "Item2": "System.Collections.dll"
+    },
+    "DictionaryCollectionTypeReference": {
+      "Item1": "System.Collections.Generic.Dictionary`2",
+      "Item2": "System.Collections.dll"
+    },
+    "CheckedReferencedAssemblies": [],
+    "InstanceId": null,
+    "Name": "XBSecurity",
+    "Metadata": {}
+  }
+}

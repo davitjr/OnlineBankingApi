@@ -1,0 +1,3467 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>OnlineBankingApi</name>
+    </assembly>
+    <members>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccounts">
+            <summary>
+            Վերադարձնում է հաճախորդի բոլոր հաշիվների մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccount(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է հաշվի մանրամասները
+            </summary>
+            <param name="request">Հաշվեհամար</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetCurrentAccounts(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի բոլոր ընթացիկ հաշիվների մասին տեղեկատվությունը
+            </summary>
+            <param name="filter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountStatement(OnlineBankingApi.Models.Requests.AccountStatementRequest)">
+            <summary>
+            Վերադարձնում է հաշվի քաղվածքը ֆիլտրներին համապատասխան
+            </summary>
+            <param name="accountNumber">Հաշվեհամար</param>
+            <param name="dateFrom">Քաղվածքի սկիզբ</param>
+            <param name="dateTo">Քաղվածքի վերջ</param>
+            <param name="minAmount">Մուտքագրվող մինիմալ գումար  գործարքները ֆիլտրելու համար(default parameter = -1)</param>
+            <param name="maxAmount">Մուտքագրվող մաքսիմալ գումար  գործարքները ֆիլտրելու համար(default parameter = -1)</param>
+            <param name="debCred">Դեբեդ /կրեդիտ եթե փոխանցվում է с միայն կրեդիտներն է  , d միայն դեբետները ,  null բոլորը(default parameter = null)</param>
+            <param name="transactionsCount">Ցուցադրվող գործարքների քանակ(default parameter = 0)</param>
+            <param name="orderByAscDesc">Գործարքների խմբավորում ըստ գումարի աճման/նվազման կարգով ։ Եթե 1 աճման , 2 նվազման, 0 առանց խմբավորման(default parameter = 0)</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountDescription(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է տվյալ հաշվեհամարի նկարագրությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.SaveAccountClosingOrder(OnlineBankingApi.Models.Requests.AccountClosingOrderRequest)">
+            <summary>
+            Ընթացիկ հաշվի փակման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountClosingOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Ընթացիկ հաշվի փակման հայտի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.ApproveAccountClosingOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ընթացիկ հաշվի փակման հայտի ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ընթացիկ հաշվի բացման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.ApproveAccountOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ընթացիկ հաշվի բացման հայտի ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.SaveAccountOrder(OnlineBankingApi.Models.Requests.AccountOrderRequest)">
+            <summary>
+            Ընթացիկ հաշվի բացման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetSwiftMessage940Statement(OnlineBankingApi.Models.Requests.AccountNumberAndDateRequest)">
+            <summary>
+            Վերադարձնում է ընթացիկ հաշվի քաղվածքը՝ ՀՏ940 ֆորմատով
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetSwiftMessage950Statement(OnlineBankingApi.Models.Requests.AccountNumberAndDateRequest)">
+             <summary>
+            Վերադարձնում է ընթացիկ հաշվի քաղվածքը՝ ՀՏ950 ֆորմատով
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountJointCustomers(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+             <summary>
+            Վերադարձնում է հաշվին կցված 3-րդ անձանց ցանկը (հօգուտ 3-րդ անձի/համատեղ հաշիվների դեպքում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.IsCurrentAccount(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+             <summary>
+            Վերադարձնում է՝ արդյոք տվյալ հաշվեհամարը ընթացիկ հաշվեհամար է, թե ոչ։
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.CheckAccountForPSN(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+             <summary>
+            Ստուգում է՝ արդյոք նշված հաշվեհամարին փոխանցում կատարելիս անհրաժեշտ է մուտքագրել ՀԾՀ, թե ոչ
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetCurrentAccountTarriffs">
+            <summary>
+            Ընթացիկ հաշվի պայմանների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetDepositAndCurrentAccountCurrencies(OnlineBankingApi.Models.Requests.DepositAndCurrentAccCurrenciesRequest)">
+            <summary>
+            Վարկային գծի և ընթացիկ հաշիվների արժույթների ստացում
+            </summary>
+            <param name="orderType"></param>
+            <param name="orderSubtype"></param>
+            <param name="orderAccountType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetCreditLineConnectAccount(OnlineBankingApi.Models.Requests.LoanFullNumberRequest)">
+            <summary>
+            Օվերդրաֆտի հաշվին կցված ընթացիկ հաշվի ստացում
+            </summary>
+            <param name="loanFullNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetCurrentAccountRequisites(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է ընթացիկ հաշվի վավերապայմանները
+            </summary>
+            <param name="accountNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetOpenedAccountContract(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է բացված ընթացիկ հաշվի պայմանագիրը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetClosedAccounts">
+            <summary>
+            վերադարձնում է փակված հաշիվները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountReOpenOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է Հաշվի վերաբացման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.SaveAccountReOpenOrder(OnlineBankingApi.Models.Requests.AccountReOpenOrderRequest)">
+            <summary>
+            Պահպանում է հաշվի վերաբացման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.ApproveAccountReOpenOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում է հաշվի վերաբացման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountsForCurrency(OnlineBankingApi.Models.Requests.CurrencyRequest)">
+            <summary>
+            Վերադարձնում է վարկի մարման հայտի դեպքում հասանելի ելքագրվող հաշիվների ցանկը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.IsPOSAccount(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+             <summary>
+            Վերադարձնում է՝ արդյոք տվյալ հաշվեհամարը POS հաշվեհամար է, թե ոչ։
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetSearchedBudgetAccount(OnlineBankingApi.Models.Requests.SearchBudgetAccountRequest)">
+            <summary>
+            Վերադարձնում է բյուջե հաշվեհամարի մասին տեղեկատվություն
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccountController.GetAccountsDigitalBanking">
+            <summary>
+            Վերադարձնում է ընթացիկ, միավորված ընթացիկ և սնանկ հաշիվները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccreditiveController.GetAccreditives(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի ակրեդիտիվների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AccreditiveController.GetAccreditive(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալ ակրեդիտիվի մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="T:OnlineBankingApi.Controllers.AttachedCardController">
+            <summary>
+            AttachedCardController designed to handle Other Bank Cards attach, deattach and other processes.
+            </summary>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.AttachCardValidation">
+             <summary>
+            Այլ բանկերի քարտերի կցում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.AttachCard(OnlineBankingApi.Models.Requests.AttachCardRequest)">
+             <summary>
+            Այլ բանկերի քարտերի կցում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.AttachCardCompletion(OnlineBankingApi.Models.Requests.AttachCardCompletionRequest)">
+             <summary>
+            Այլ բանկերի քարտերի կցում (Պատասխանի ստացում)
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.DeleteAttachedCardById(OnlineBankingApi.Models.Requests.AttachCardDeleteRequest)">
+            <summary>
+            Կցված քարտի հեռացում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.SaveAndApproveWithAttachedCard(OnlineBankingApi.Models.Requests.AttachCardBindingRequest)">
+            <summary>
+            Payment With Binding
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AttachedCardController.GetAttachedCards">
+            <summary>
+            Կցված քարտերի GET
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.ValidateOTP(OnlineBankingApi.Models.Requests.OTPRequest)">
+            <summary>
+            Ստուգում է OTP-ին
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.ValidateRegistrationCode(System.String,OnlineBankingApi.Models.Requests.ValidateRegistrationCode)">
+            <summary>
+            Ստուգում է գրանցման կոդը
+            </summary>
+            <param name="deviceTypeDescription">Սարքավորման նկարագրություն</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.ChangeUserPassword(OnlineBankingApi.Models.Requests.ChangeUserPasswordRequest)">
+            <summary>
+            Փոփոխում է օգտագործողի գաղտնաբառը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.ResetUserPassword(OnlineBankingApi.Models.Requests.PasswordResetRequest)">
+            <summary>
+            Իրականացնում է գաղտնաբառի վերականգնում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.CheckAuthorization">
+            <summary>
+            Ստուգում է վավերականությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.AuthorizationController.LogOut">
+            <summary>
+            LogOut
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCards(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի բոլոր քարտերի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCard(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ քարտի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardStatement(OnlineBankingApi.Models.Requests.CardStatementRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ժամանակահատվածում նշված քարտի քաղվածքը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetArcaBalance(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է տվյալ քարտի մնացորդը ARCA համակարգում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardMembershipRewards(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտի MR ծրագրին անդամակցության տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardClosingOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քարտի փակման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SaveCardClosingOrder(OnlineBankingApi.Models.Requests.CardClosingOrderRequest)">
+             <summary>
+            Քարտի փակման հայտի պահպանում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ApproveCardClosingOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Քարտի փակման հայտի ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SaveArcaCardsTransactionOrder(OnlineBankingApi.Models.Requests.ArcaCardsTransactionOrderRequest)">
+             <summary>
+            Քարտի բլոկավորման/ապաբլոկավորման հայտի պահպանում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetArcaCardsTransactionOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քարտի բլոկավորման/ապաբլոկավորման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ApproveArcaCardsTransactionOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Քարտի բլոկավորման/ապաբլոկավորման հայտի պահպանում և ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetEmbossingName(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտի վրա գրված հաճախորդի անունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardLimits(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է քարտի լիմիտները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardLimitChangeOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քարտի լիմիտների փոփոխության հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ApproveCardLimitChangeOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Քարտի լիմիտների փոփոխության հայտի պահպանում և ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SaveCardLimitChangeOrder(OnlineBankingApi.Models.Requests.CardLimitChangeOrderRequest)">
+            <summary>
+            Պահպանում է քարտի լիմիտների փոփոխության հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetPlasticCardOrder(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Նոր քարտի պատվիրման հայտի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ApprovePlasticCardOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է պլաստիկ քարտի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SavePlasticCardOrder(OnlineBankingApi.Models.Requests.PlasticCardOrderRequest)">
+            <summary>
+            Պահպանում է պլաստիկ քարտի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardByAccountNumber(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտը՝ ըստ հաշվեհամարի
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetFullCardByAccountNumber(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Ամբողջական քարտի GET
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardOverdraft(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտի գերածախսի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetMRFeeAMD(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            AMEX_MR ի սպասարկման գումար
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetAvailableCardsForCreditLine(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է վարկային գիծ չունեցող քարտերը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardTypeName(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Քարտի տեսակի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardByCardNumber(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի քարտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetLinkedAndAttachedCards(OnlineBankingApi.Models.Requests.LinkedAndAttachedCardsRequest)">
+            <summary>
+            վերադարձնում է քարտի կից և լրացուցիչ քարտերը 
+            </summary>
+            <param name="productId"></param>
+            <param name="productFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetOpenedCards">
+            <summary>
+            Վերադարձնում է հաճախորդի գործող քարտերի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardTariff(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ քարտի սակագները
+            </summary>
+            <param name="productIdRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SaveCVVNote(OnlineBankingApi.Models.Requests.CVVNoteRequest)">
+            <summary>
+            Պահպանում է հաճախորդի կողմից մուտքագրված CVV-ի վերաբերյալ նշումը
+            </summary>
+            <param name="CVVNoteRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetVirtualCardDetails(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է վիրտուալ քարտի մանրամասն տվյալները
+            </summary>
+            <param name="virtualCardDetails"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ActivateAndOpenProductAccounts(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+             Ակտիվացնում է քարտը ԱՌՔԱ ում, բացում է քարտի քարտային հաշիվները
+            </summary>
+            <param name="productID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetPlasticCardSMSServiceOrder(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Քարտի  SMS ծառայության ակտիվացման, դադարեցման կամ փոփոխման հայտի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.SavePlasticCardSMSServiceOrder(OnlineBankingApi.Models.Requests.PlasticCardSMSServiceOrderRequest)">
+            <summary>
+            Պահպանում է  պլաստիկ քարտի SMS ծառայության գրանցման,փոփոխման կամ դադարեցման  հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.ApprovePlasticCardSMSServiceOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում է  պլաստիկ քարտի SMS ծառայության գրանցման,փոփոխման կամ դադարեցման  հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetPlasticCardSMSServiceTariff(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ քարտի  SMS-ի սակագինը
+            </summary>
+            <param name="productIdRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetPlasticCardSMSServiceHistory(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտի SMS ծառայության նախորդ տվյալները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CardController.GetCardsForC2C">
+            <summary>
+            վերադարձնում է քարտից քարտ փոխանցման համար ելքագրվող քարտերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContactController.GetContact(OnlineBankingApi.Models.Requests.ContactIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ կոնտակտային անձի տվյալները
+            </summary>
+            <param name="contactId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContactController.GetContacts">
+            <summary>
+            Վերադարձնում է կոնտակտային անձանց տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContactController.AddContact(OnlineBankingApi.Models.Requests.ContactRequest)">
+            <summary>
+            Ավելացնում է նոր կոնտակտային անձ
+            </summary>
+            <param name="contact"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContactController.UpdateContact(OnlineBankingApi.Models.Requests.UpdateContactRequest)">
+            <summary>
+            Թարմացնում է կոնտակտային անձի տվյալները
+            </summary>
+            <param name="contact"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContactController.DeleteContact(OnlineBankingApi.Models.Requests.ContactIdRequest)">
+            <summary>
+            Հեռացնում է կոնտակտային անձին
+            </summary>
+            <param name="contactId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetLoansDramContract(OnlineBankingApi.Models.Requests.LoanContractRequest)">
+            <summary>
+            Դրամական միջոցների գրավի պայմանագիր
+            </summary>
+            <param name="docId"></param>
+            <param name="productType">վարկային գիծ Type = 2 , վարկ type = 1</param>
+            <param name="fromApprove"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintFastOverdraftContract(OnlineBankingApi.Models.Requests.PrintContractRequest)">
+            <summary>
+            Արագ օվերդրաֆտի պայմանագիր (PDF)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintDepositLoanContract(OnlineBankingApi.Models.Requests.PrintContractRequest)">
+            <summary>
+            Ավանդի գրավով վարկի պայմանագրի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintDepositCreditLineContract(OnlineBankingApi.Models.Requests.PrintContractRequest)">
+            <summary>
+            Ավանդի գրավով վարկային գծի պայմանագրի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetACRAAgreementText">
+            <summary>
+            Վերադարձնում է ԱՔՌԱ համաձայնագրի տեքստը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintCardStatement(OnlineBankingApi.Models.Requests.PrintCardStatementRequest)">
+            <summary>
+            Վերադարձնում է քարտի քաղվածքը pdf/excel ֆորմատով
+            </summary>
+            <param name="cardNumber"></param>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <param name="exportFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintUtilitylOrder(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Վերադարձնում է կոմունալ վճարման հանձնարարականը
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintInternationalOrder(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Վերադարձնում է միջազգային փոխանցման վճարման հանձնարարականը
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintMemorialOrder(OnlineBankingApi.Models.Requests.AccountNumberAndDateRequest)">
+            <summary>
+            Վերադարձնում է մեմորիալ օրդերը
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintDepositAccountStatement(OnlineBankingApi.Models.Requests.PrintDepositAccStatementRequest)">
+            <summary>
+            Ավանդի քաղվածքի ստացում pdf/excel ֆորմատներով
+            </summary>
+            <param name="productId"></param>
+            <param name="accountNumber"></param>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <param name="averageRest"></param>
+            <param name="currencyRegulation"></param>
+            <param name="payerData"></param>
+            <param name="additionalInformationByCB"></param>
+            <param name="includingExchangeRate"></param>
+            <param name="exportFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintLoanTermsSheetBase64(OnlineBankingApi.Models.Requests.PrintLoanTermSheetRequest)">
+            <summary>
+            Վերադարձնում է էական պայմանների անհատական թերթիկը՝ base64 ֆորմատով։
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintCurrentAccountStatement(OnlineBankingApi.Models.Requests.PrintCurrentAccStatementRequest)">
+            <summary>
+            Վերադարձնում է ընթացիկ հաշվի քաղվածքը PDF/Excel ֆորմատներով
+            </summary>
+            <param name="accountNumber"></param>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <param name="includingExchangeRate"></param>
+            <param name="exportFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintCardSwiftDetails(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է քարտային հաշվի վավերապայմանները PDF-ով
+            </summary>
+            <param name="accountNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintTransfersAcbaStatement(OnlineBankingApi.Models.Requests.PrintTransfersAcbaStatementRequest)">
+            <summary>
+            Փոխանցում սեփական հաշիվների միջև,ՀՀ տարածքում, բյուջե վճարման հանձնարակականի ստացում pdf/excel ֆորմատներով
+            </summary>
+            <param name="id"></param>
+            <param name="exportFormat"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintTransfersReestrByPage(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Փոխանցում ռեեստրով ցանկով ստացում pdf/excel ֆորմատներով
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintTransfersReestr(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Փոխանցում ռեեստրով ստացում pdf/excel ֆորմատներով
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetCurrentAccountContractBefore(OnlineBankingApi.Models.Requests.DocIdRequest)">
+            <summary>
+            Ընթացիկ հաշվի պայմանագրի ստացում՝ նախքան հայտի ուղարկումը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetCardToCardReceipt(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քարտից քարտ փոխանցման անդորրագիրը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintLoanTermsSheet(OnlineBankingApi.Models.Requests.PrintLoanTermSheetRequest)">
+            <summary>
+            Սպառողական վարկի անհատական թերթիկ (PDF)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PeriodicTransfer(OnlineBankingApi.Models.Requests.AppIdRequest)">
+            <summary>
+            Պարբերականի տպում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintLoanStatement(OnlineBankingApi.Models.Requests.PrintLoanStatementRequest)">
+            <summary>
+            Վերադարձնում է վարկի քաղվածքը pdf/excel ֆորմատով
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetExistingDepositContract(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Ավանդի պայմանագրի ստացում ձևակերպված ավանդի համար
+            </summary>
+            <param name="product"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetExistingLoansDramContract(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            վերադարձնում դրամական միջոցների գրավի պահպանված պայմանագիրը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.GetDepositLoanOrDepositCreditLineContract(OnlineBankingApi.Models.Requests.LoanOrCreditLineContractRequest)">
+            <summary>
+            Ավանդի գրավով վարկի/վարկային գծի պայմանագրի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintCreditLineStatement(OnlineBankingApi.Models.Requests.PrintLoanStatementRequest)">
+            <summary>
+            Վերադարձնում է վարկային գծի քաղվածքը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ContractController.PrintPOSStatement(OnlineBankingApi.Models.Requests.POSStatementStatmentRequest)">
+            <summary>
+            Վերադարձնում է առևտրի կետում քարտերով կատարված գործարքների քաղվածքը
+            POS տերմինալի քաղվածք
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLine(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ վարկային գծի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineGrafik(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ վարկային գծի գրաֆիկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ վարկային գծի հայտի մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineTerminationOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է վարկային գծի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.SaveCreditLineTerminationOrder(OnlineBankingApi.Models.Requests.CreditLineTerminationOrderRequest)">
+            <summary>
+            Պահպանում է վարկային գծի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineByAccountNumber(OnlineBankingApi.Models.Requests.LoanFullNumberRequest)">
+            <summary>
+            Վերադարձնում է տվյալ հաշվեհամարին համապատասխան վարկային գծի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineRepayment(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ վարկային գծի հաջորդ վճարման մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.ApproveCreditLineTerminationOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում է վարկային գծի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineLastDate(OnlineBankingApi.Models.Requests.CreditLineLastDateRequest)">
+            <summary>
+            Վերադարձնում է վարկային գիծի վերջին օրը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineProvisionAmount(OnlineBankingApi.Models.Requests.CreditLineProvisionAmountRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկային գծի դեպքում գումարի չափը
+            </summary>
+            <param name="amount"></param>
+            <param name="loanCurrency"></param>
+            <param name="provisionCurrency"></param>
+            <param name="mandatoryPayment"></param>
+            <param name="creditLineType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLines(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի բոլոր վարկային գծերը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCreditLineStatement(OnlineBankingApi.Models.Requests.LoanStatementRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ժամանակահատվածում նշված վարկային գծի քաղվածքը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCurrentAccountOverdrafts(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է իրավաբանական անձանց դեպքում ընթացիկ հաշվի վարկային գծերը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CreditLineController.GetCardsForNewCreditLine(OnlineBankingApi.Models.Requests.OrderTypeRequest)">
+            <summary>
+            Վերադարձնում է նոր վարկային գծի համար հասանելի քարտերի ցանկը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetThirdPersons">
+            <summary>
+            Վերադարձնում է երրորդ անձանց
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetCustomerAvailableAmount(OnlineBankingApi.Models.Requests.CurrencyRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալ պահին տվյալ արժույթով հասանելի գումարը
+            </summary>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetPhoneNumbers(OnlineBankingApi.Models.Requests.CustomerNumberRequest)">
+            <summary>
+            Հաճախորդի հեռախոսահամարների ստացում
+            </summary>
+            <param name="customerNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetEmails(OnlineBankingApi.Models.Requests.CustomerNumberRequest)">
+            <summary>
+            Հաճախորդի Էլ․փոստերի ստացում
+            </summary>
+            <param name="customerNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.SaveOnlineUserPhoto(OnlineBankingApi.Models.Requests.SaveOnlineUserPhotoRequest)">
+            <summary>
+            Հաճախորդի պրոֆիլի նկարի պահպանում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.DeleteOnlineUserPhoto">
+            <summary>
+            Հաճախորդի պրոֆիլի նկարի հեռացում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetOnlineUserPhoto">
+            <summary>
+            Հաճախորդի պրոֆիլի նկարի տվյալներ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetUserInfo">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.GetCustomerAccountRestConfig">
+            <summary>
+            ACBA Digital տիրույթում ընդհանուր հասանելի մնացորդի կարգավորումների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.UpdateCustomerAccountRestConfig(OnlineBankingApi.Models.Requests.RestConfigRequest)">
+            <summary>
+            ACBA Digital տիրույթում ընդհանուր հասանելի մնացորդի Կարգավորումների փոփոխում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.CustomerController.ResetCustomerAccountRestConfig">
+            <summary>
+            ACBA Digital տիրույթում ընդհանուր հասանելի մնացորդի Կարգավորումների նախնական վիճակի բերում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositCaseController.GetDepositCases(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի  պահատուփերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositCaseController.GetDepositCase(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալ պահատուփի մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDeposits(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի ավանդների մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDeposit(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositRepaymentGrafik(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է ավանդի վճարման գրաֆիկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.ApproveDepositOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ավանդի բացման հայտի ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.SaveDepositOrder(OnlineBankingApi.Models.Requests.DepositOrderRequest)">
+            <summary>
+            Ավանդի բացման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositCondition(OnlineBankingApi.Models.Requests.DepositConditionRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդատեսակին համապատասխան պայմանները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetAccountsForDepositPercentAccount(OnlineBankingApi.Models.Requests.AccountsForDepositPercentAccountRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդին համապատասխան տոկոսագումարի հաշիվների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetAccountsForNewDeposit(OnlineBankingApi.Models.Requests.AccountsForNewDepositRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդին համապատասխան մայր գումարի հաշիվների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositRepaymentsPrior(OnlineBankingApi.Models.Requests.DepositRepaymentsPriorRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրաֆիկը՝ նախքան ավանդի ձևակերպումը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositTerminationOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ավանդի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.ApproveDepositTerminationOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է ավանդի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.SaveDepositTerminationOrder(OnlineBankingApi.Models.Requests.DepositTerminationOrderRequest)">
+            <summary>
+            Պահպանում է ավանդի դադարեցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ավանդի բացման հայտի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.CheckDepositOrderCondition(OnlineBankingApi.Models.Requests.CheckDepositOrderConditionRequest)">
+            <summary>
+            Վերադարձնում է տվյալ պայմաններով ավանդի ստուգումները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositLoanAndProvisionAmount(OnlineBankingApi.Models.Requests.DepositLoanAndProvisionAmountRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկի դեպքում գումարի չափը
+            </summary>
+            <param name="amount"></param>
+            <param name="loanCurrency"></param>
+            <param name="provisionCurrency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetRedemptionAmountForDepositLoan(OnlineBankingApi.Models.Requests.RedemptionAmountRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկի ամսական մարման չափը
+            </summary>
+            <param name="startCapital"></param>
+            <param name="interestRate"></param>
+            <param name="dateOfBeginning"></param>
+            <param name="dateOfNormalEnd"></param>
+            <param name="firstRepaymentDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetCommisionAmountForDepositLoan(OnlineBankingApi.Models.Requests.CommisionAmountRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկի միջնորդավճարը
+            </summary>
+            <param name="startCapital"></param>
+            <param name="dateOfBeginning"></param>
+            <param name="dateofNormalEnd"></param>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetDepositContract(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ավանդի պայմանագրի տվյալները
+            </summary>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.DepositController.GetOpenedDeposits">
+            <summary>
+            Վերադարձնում է հաճախորդի գորոծող ավանդների մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.EmployeeSalaryController.GetEmployeeSalaryList(OnlineBankingApi.Models.Requests.StartDateEndDateRequest)">
+            <summary>
+            Վերադարձնում է նշված ժամանակահատվածում ստացված աշխատավարձի տվյալները
+            </summary>
+            <param name="startDateEndDateRequest"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.EmployeeSalaryController.GetEmployeeSalaryDetails(OnlineBankingApi.Models.Requests.GenericIdRequest)">
+            <summary>
+            Տվյալ աշխատավարձի մանրամամասն տվյալներ
+            </summary>
+            <param name="ID"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.EmployeeSalaryController.GetEmployeePersonalDetails">
+            <summary>
+            Աշխատակցի մանրամասն տվյալներ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.FactoringController.GetFactorings(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի ֆակտորինգների ցուցակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.FactoringController.GetFactoring(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալ ֆակտորինգի մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.FileController.SaveUploadedFile(OnlineBankingApi.Models.Requests.UploadedFileRequest)">
+            <summary>
+            Պահպանում է և վերադարձնում է պահպանված ռեեստրի ֆայլի ID- ին 
+            </summary>
+            <param name="uploadedFile"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.GroupPaymentController.GetOrderGroups(OnlineBankingApi.Models.Requests.OrderGroupRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի՝ ծառայությունների խմբերը
+            </summary>
+            <param name="status"></param>
+            <param name="groupType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.GroupPaymentController.DeleteOrderGroup(OnlineBankingApi.Models.Requests.GroupIdRequest)">
+            <summary>
+            Գործարքների խմբի հեռացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.GroupPaymentController.SaveGroupPayment(OnlineBankingApi.Models.Requests.GroupPaymentRequest)">
+            <summary>
+            Պահպանում է խմբում ներառված ծառայությունները՝ որպես գործարք
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.GuaranteeController.GetGuarantees(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի երաշխիքների ցուցակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.GuaranteeController.GetGuarantee(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալ երաշխիքի մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.SaveHBServletTokenUnBlockRequestOrder(OnlineBankingApi.Models.Requests.HBServletRequestOrderRequest)">
+            <summary>
+            Պահպանում է տոկենի ապաբլոկավորման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.ApproveHBServletTokenUnBlockRequestOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է տոկենի ապաբլոկավորման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.GetHBServletRequestOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Տոկենի ապաբլոկավորման կամ ակտիվացման հայտի Get
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.GetCustomerActiveTokens(OnlineBankingApi.Models.Requests.TokenOperationRequest)">
+            <summary>
+            Ստանալ տվյալ հաճախորդի բոլոր տոկենները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.SaveAndApproveTokenReplacementOrder(OnlineBankingApi.Models.Requests.TokenOperationRequest)">
+            <summary>
+            "Փոխարինող" ենթատեսակով նոր տոկենի մուտքագրման հայտի պահպանում, ուղարկում \\ Ծառայությունների ակտիվացում հայտի պահպանում, ուղարկում\\Տոկենի ակտիվացման հայտ 
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.SaveAndApproveTokenDeactivationOrder(OnlineBankingApi.Models.Requests.TokenOperationRequest)">
+            <summary>
+            տոկենի դեակտիվացման հայտի պահպանում, ուղարկում , տոկենի դեակտիվացում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.SaveAndApproveUserUnlockOrder(OnlineBankingApi.Models.Requests.TokenOperationRequestWithAuthorization)">
+            <summary>
+            User-ի նույնականցում եվ ապաբլոկավորում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.SaveAndApproveNewTokenOrder(OnlineBankingApi.Models.Requests.TokenOperationRequest)">
+            <summary>
+            նոր տոկենի մուտքագրման հայտի պահպանում, ուղարկում \\ Ծառայությունների ակտիվացում հայտի պահպանում, ուղարկում\\Տոկենի ակտիվացման հայտ 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.VerifyUserAndSendOtpSms(OnlineBankingApi.Models.Requests.VerifyUserAndSendOtpSmsRequest)">
+            <summary>
+            User-ի նույնականցման համար OTP-ի գեներացում և sms-ով ուղարկում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.ValidateProvisioning(OnlineBankingApi.Models.Requests.UserProvisionRequest)">
+            <summary>
+            Մինչև SDK-ում provision-ի վալիդացիա
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HBApplicationController.AuthorizeAnonymousMethods(System.UInt64,System.String,System.Int32,System.String)">
+            <summary>
+            Only for some token functions with Allow Anonymous attribute and without ValidateOtpFilter filter (Seting header values and authorize customer in cache)
+            </summary>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.HomePageController.GetIBankingHomePage">
+            <summary>
+            Վերադարձնում է mobile/web համակարգերում մուտքից հետո բացվող պատուհանի համար անհրաժեշտ տվյալները 
+            (Հաշիվներ, Ավանդներ,Վարկեր, Քարտեր)
+            Mobile-ի դեպքում՝ ամեն պրոդուկտից 1-ական
+            Web-ի դեպքում՝ ամեն պրոդուկտից 2-ական
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCountries">
+            <summary>
+            Վերադարձնում է երկրների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetEmbassyList(OnlineBankingApi.Models.Requests.ReferenceTypesRequest)">
+            <summary>
+            Վերադարձնում է դեսպանատների ցանկը
+            </summary>
+            <param name="referenceTypes"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetFilialList">
+            <summary>
+            Վերադարձնում է մասնաճյուղերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetReferenceOrderFilialList">
+            <summary>
+            Վերադարձնում է մասնաճյուղերի ցանկը՝ բացառությամբ Կենտրոն մասնաճյուղի
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetReferenceLanguages">
+            <summary>
+            Վերադարձնում է տեղեկանքի լեզուների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetReferenceTypes">
+            <summary>
+            Վերադարձնում է տեղեկանքի տեսակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetListOfLoanApplicationAmounts">
+            <summary>
+            Վերադարձնում է վարկային դիմումի գումարի ընտրության ցուցակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCommunicationTypes">
+            <summary>
+            Վերադարձնում է հաղորդակցման եղանակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetRegions(OnlineBankingApi.Models.Requests.CountryRequest)">
+            <summary>
+            Վերադարձնում է մարզերի ցանկը
+            </summary>
+            <param name="country"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetArmenianPlaces(OnlineBankingApi.Models.Requests.RegionRequest)">
+            <summary>
+            Վերադարձնում է շրջանը
+            </summary>
+            <param name="region"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetTransferSystemCurrency(OnlineBankingApi.Models.Requests.TransferSystemRequest)">
+            <summary>
+            Վերադարձնում է տվյալ արագ դրամական համակարգով հասանելի արժույթների ցանկը
+            </summary>
+            <param name="transferSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetFastTransferSystemTypes">
+            <summary>
+            Վերադարձնում է արագ դրամական համակարգերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetDepositTypeCurrencies(OnlineBankingApi.Models.Requests.DepositTypeRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդատեսակին համապատասխան արժույթների ցանկը
+            </summary>
+            <param name="depositType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetActiveDepositTypesForNewDepositOrder(OnlineBankingApi.Models.Requests.ActiveDepositTypesRequest)">
+            <summary>
+            Վերադարձնում է նոր ավանդի հայտի ժամանակ առաջարկվող ավանդատեսակները
+            </summary>
+            <param name="accountType"></param>
+            <param name="customerType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetJointTypes">
+            <summary>
+            Վերադարձնում է նոր ավանդի հայտի ժամանակ առաջարկվող ավանդատեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardClosingReasons">
+            <summary>
+            Վերադարձնում է քարտի փակման պատճառների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCashOrderCurrencies">
+            <summary>
+            Վերադարձնում է գումարի ստացման և փոխանցման հայտի արժույթները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetAssigneeOperationGroupTypes">
+            <summary>
+            Վերադարձնում է լիազորագրի գործողության խմբերը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCurrentAccountOrderCurrencies">
+            <summary>
+            Վերադարձնում է ընթացիկ հաշվի բացման հայտի համար հասանելի արժույթները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetStatementDeliveryTypes">
+            <summary>
+            Վերադարձնում է քաղվածքի ստացման եղանակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetDepositClosingReasonTypes">
+            <summary>
+            Վերադարձնում է ավանդի դադարեցման պատճառների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetReasonsForCardTransactionAction">
+            <summary>
+            Վերադարձնում է քարտի բլոկավորման/ապաբլոկավորման հայտի պատճառները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetActionsForCardTransaction">
+            <summary>
+            Վերադարձնում է քարտի բլոկավորման/ապաբլոկավորման գործողության տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetAccountClosingReasons">
+            <summary>
+            Վերադարձնում է հաշվի փակման պատճառների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardLimitChangeOrderActionTypes">
+            <summary>
+            Վերադարձնում է քարտի լիմիտների փոփոխության գործողության տեսակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCommunalBranchList(OnlineBankingApi.Models.Requests.CommunalTypesRequest)">
+            <summary>
+            Մասնաճյուղի ընտրության հնարավորություն
+            </summary>
+            <param name="communalType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetSyntheticStatuses">
+            <summary>
+            Հօգուտ 3-րդ անձի փոխանցում կատարելիս պարտատիրոջ կարգավիճակների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCreditLineMandatoryInstallmentTypes">
+            <summary>
+            Ավանդի գրավով վարկային գծի հայտի 'Պարտադիր մուտքեր' դաշտի ցանկի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetTransferMethod">
+            <summary>
+            Փոխանցման եղանակ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardSystemTypes">
+            <summary>
+            վերադարձնում է քարտի պատվիրման համար նախատեսված քարտերի համակարգերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardTypes(OnlineBankingApi.Models.Requests.CardSystemRequest)">
+            <summary>
+            վերադարձնում է քարտի պատվիրման համար նախատեսված քարտի ենթատեսակների ցանկը
+            </summary>
+            <param name="cardSystem"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCurrenciesPlasticCardOrder(OnlineBankingApi.Models.Requests.CurrenciesPlasticCardRequest)">
+            <summary>
+            վերադարձնում է քարտի պատվիրման համար առաջարկվող արժույթների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardReportReceivingTypes">
+            <summary>
+            Քաղվածքի ստացման եղանակների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardPINCodeReceivingTypes">
+            <summary>
+            PIN-ի ստացման եղանակների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCurrencies">
+            <summary>
+            Վերադարձնում է արժույթների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetOrderTypes(OnlineBankingApi.Models.Requests.GetOrderTypesRequest)">
+            <summary>
+            Վերադարձնում է գործարքների տեսակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetOrderQualityTypes">
+            <summary>
+            Վերադարձնում է գործարքների կարգավիճակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCurrenciesForReceivedFastTransfer">
+            <summary>
+            Վերադարձնում է արժույթների ցանկը արագ դրամական համակարգի համար
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPeriodicityTypes">
+            <summary>
+            Վերադարձնում է պարբերականության տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetSentOrderQualityTypes">
+            <summary>
+            Վերադարձնում է ՈՒՂԱՐԿՎԱԾ կարգավիճակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCreditLineTypesForOnlineMobile(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկային գծի տեսակները
+            </summary>
+            <param name="cardNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPlasticCardOrderCardTypes">
+            <summary>
+            Քարտի պատվիրման հայտի համար հասանելի քարտատեսակների ցանկի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetTemplateDocumentTypes">
+            <summary>
+            Ձևանմուշների տեսակների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetAttachedCardTypes(OnlineBankingApi.Models.Requests.MainCardNumberRequest)">
+            <summary>
+            Լրացուցիչ քարտի տեսակի ստացում
+            </summary>
+            <param name="mainCardNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetLTACodes">
+            <summary>
+            Վերադարձնում է ՏՀՏ կոդերի ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCredentialTypes(OnlineBankingApi.Models.Requests.CredentialTypesRequest)">
+            <summary>
+            Վերադարձնում է լիազորագրի տեսակ
+            </summary>
+            <param name="typeOfCustomer"></param>
+            <param name="customerFilialCode"></param>
+            <param name="userFilialCode"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetDAHKFreezings">
+            <summary>
+            Վերադարձնում է հաճախորդի ԴԱՀԿ սառեցումները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetAssigneeOperationTypes(OnlineBankingApi.Models.Requests.GroupIdRequest)">
+            <summary>
+            Վերադարձնում է լիազորագրի գործողության խմբի գործողության տեսակները
+            </summary>
+            <param name="groupId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetNextOperDay">
+            <summary>
+            Հաջորդ գործառնական օր
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetFastOverdrafStartAndEndDate">
+            <summary>
+            Վերադարձնում է արագ օվերդրաֆտի սկզբի և վերջի ամսաթվերը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCBKursForDate(OnlineBankingApi.Models.Requests.CBKursForDateRequest)">
+            <summary>
+            Վերադարձնում է ԿԲ փոխարժեքների ընթացիկ տվյալները
+            </summary>
+            <param name="currency"></param>
+            <param name="date"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetFastOverdraftFeeAmount(OnlineBankingApi.Models.Requests.AmountRequest)">
+            <summary>
+            Վերադարձնում է Արագ օվերդրաֆտի միջնորդավճարի գումարը
+            </summary>
+            <param name="amount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetBusinesDepositOptionRate(OnlineBankingApi.Models.Requests.BusinesDepositOptionRateRequest)">
+            <summary>
+            Վերադարձնում է տվյալ բիզնես ավանդի օպցիանրին համապատասխան տոկոսադրույքը
+            </summary>
+            <param name="depositOption"></param>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetNewCardPassword">
+            <summary>
+            Առաջարկվող գաղտնաբառի ստացում
+            </summary>
+            <param name="customerNumber"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetLastExchangeRate(OnlineBankingApi.Models.Requests.LastExchangeRateRequest)">
+            <summary>
+            Վերադարձնում է փոխարժեքի ընթացիկ տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCashOrderTypes">
+            <summary>
+            Վերադարձնում է գումարի ստացման և փոխանցման հայտի տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCredentialOrderFee">
+            <summary>
+            Վերադարձնում է լիազորագրի հայտի մուտքագրման միջնորդավճարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPasswordForCustomerDataOrder">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալների փոփոխման հայտում առաջարկվող գաղտնաբարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetEmailForCustomerDataOrder">
+            <summary>
+            Վերադարձնում է հաճախորդի տվյալների փոփոխման հայտում առաջարկվող էլ. հասցեն 
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetBusinesDepositOptions">
+            <summary>
+            Վերադարձնում է բիզնես ավանդի համար տոկոսադրույքի կարգավորումների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.IsWorkingDay(OnlineBankingApi.Models.Requests.DateWorkingDayRequest)">
+            <summary>
+            Վերադարձնում է՝ արդյոք տվյալ ամսաթիվը աշխատանքային օր է, թե ոչ
+            </summary>
+            <param name="dateWorkingDay"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetMandatoryEntryInfo(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            «Գրավադրվող գումարի արժույթ» կամ «Պարտադիր մուտքեր» ինֆորմացիա
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetBankName(OnlineBankingApi.Models.Requests.CodeRequest)">
+            <summary>
+            Վերադարձնում է տվյալ Բանկի անվանումը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetExchangeRates">
+            <summary>
+            Վերադարձնում է բոլոր արժույթների կուրսերը լիստով
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardTariffsByCardType(OnlineBankingApi.Models.Requests.CardTariffsByCardTypeRequest)">
+            <summary>
+            Վերադարձնում է քարտի պայմանները
+            </summary>
+            <param name="cardType"></param>
+            <param name="periodicityType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCardServiceFee(OnlineBankingApi.Models.Requests.CardServiceFeeRequest)">
+            <summary>
+            Վերադարձնում է քարտի միջնորդավճարը
+            </summary>
+            <param name="cardType"></param>
+            <param name="officeId"></param>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetDepositRateTariff(OnlineBankingApi.Models.Requests.DepositTypeRequest)">
+            <summary>
+            Վերադարձնում է ավանդի սակագները ըստ տեսակի
+            </summary>
+            <param name="depositType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.IsPoliceAccount(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է՝ արդյոք տվյալ հաշվեհամարը ոստիկանության հաշիվ է, թե ոչ
+            </summary>
+            <param name="request">Հաշվեհամար</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPoliceCodes(OnlineBankingApi.Models.Requests.AccountNumberRequest)">
+            <summary>
+            Վերադարձնում է ոստիկանության կոդերի ցանկը
+            </summary>
+            <param name="request">Ոստիկանության հաշվեհամար</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetUtilityAbonentTypes">
+            <summary>
+            Վերադարձնում է աբոնենտի տեսակները կոմունալ վճարման համար
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetUtilityPaymentTypes">
+            <summary>
+            Վերադարձնում է Online Banking-ում հասանելի կոմունալ վճարումների տեսակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPeriodicsSubTypes">
+            <summary>
+            Վերադարձնում է կոմունալ վճարման պարբերականի դեպքում վճարման ենթատեսակը (ԳազՊրոմի դեպքում)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPayIfNoDebtTypes">
+            <summary>
+            Վերադարձնում է կոմունալի պարբերականների դեպքում վճարման տեսակների ցանկը (Պարտքի առկայության դեպքում/Անկախ պարտքի առկայությունից)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetServiceFeePeriodocityTypes">
+            <summary>
+            վերադարձնում է քարտի սպասարկման վարձի պարբերականության տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCustomerFilial">
+            <summary>
+            Վերադարձնում է Հաճախորդի գրանցված մասնաճյուղը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetLinkedCardTariffsByCardType(OnlineBankingApi.Models.Requests.CardTypeRequest)">
+            <summary>
+            Վերադարձնում է կից քարտի միջնորդավճարի ցանկը
+            </summary>
+            <param name="cardType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetAttachedCardTariffs(OnlineBankingApi.Models.Requests.AttachedCardTariffsRequest)">
+            <summary>
+            վերադարձնում է լրացուցիչ քարտի պայմանները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetLoanMatureTypesForIBanking">
+            <summary>
+            Վերադարձնում է վարկի մարման տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPlasticCardSmsServiceActions(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Վերադարձնում է պլաստիկ քարտի SMS սերվիսի գործողության տեսակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetTypeOfPlasticCardsSMS">
+            <summary>
+            Վերադարձնում է պլաստիկ քարտի SMS ծառայության տեսակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetDetailsOfCharges">
+            <summary>
+            Վերադարձնում է փոխանցման եղանակների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetServiceProvidedOrderFee(OnlineBankingApi.Models.Requests.IndexRequest)">
+            <summary>
+            վերադարձնում է ծառայության միջնորդավճարի գումարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetInfoForCustomerDataChangeOrder">
+            <summary>
+            վերադարձնում է "տվյալների փոփոխման հայտ"-ի համար անհրաժեշտ տվյալներ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetCurrentOperDay">
+            <summary>
+            վերադարձնում է գործառնական օրը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetStatementFrequency">
+            <summary>
+            Վերադարձնում է Քաղվածքի էլեկտրոնային ստացման դիմումի պարբերականությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetInternationalPaymentCurrencies">
+            <summary>
+            վերադարձնում է միջազգային փոխանցման արժույթները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetPaymentTypesForRUR">
+            <summary>
+            Վերադարձնում է RUR միջացզային փախանցման տեսակները։
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetVATForRUR">
+            <summary>
+            վերադարձնում է ԱԱՀ-ի տեսակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.GetReceicerTypesForRUR">
+            <summary>
+            Վերադարձնում է RUR փոխանցման ստացողի տեսակները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.InfoController.CommunicationTypeExistence">
+            <summary>
+            Ստուգում է, թե ուն՞ի տվյալ հաճախորդը Sap - ում քաղվածքի ստացման նշված եղանակ թե ոչ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.JWTServiceController.GenerateToken(OnlineBankingApi.Models.Requests.GenerateTokenRequest)">
+            <summary>
+            Կանչվում է մոբայլից քարտի թոքենիզացման ժամանակ վերադարձնում է թոքեն և քարտի տվյալներ էնկռիպտ վիճակում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoans(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի վարկերի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoan(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ վարկի մասին տեղեկատվությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoanRepaymentGrafik(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է վարկի մարման գրաֆիկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.SaveMatureOrder(OnlineBankingApi.Models.Requests.MatureOrderRequest)">
+            <summary>
+            Պահպանում է վարկի մարման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.ApproveMatureOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է վարկի մարման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoanMatureCapitalPenalty(OnlineBankingApi.Models.Requests.LoanMatureCapitalPenaltRequest)">
+            <summary>
+            Վերադարձնում է վարկի մայր գումարի մարման տուգանքի տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.SaveLoanProductOrder(OnlineBankingApi.Models.Requests.LoanProductOrderRequest)">
+            <summary>
+            Պահպանում է ավանդի գրավով վարկային պրոդուկտի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.ApproveLoanProductOrder(OnlineBankingApi.Models.Requests.ApproveLoanProductOrderRequest)">
+            <summary>
+            Հաստատում/ուղարկում է ավանդի գրավով վարկային պրոդուկտի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoanProductInterestRate(OnlineBankingApi.Models.Requests.LoanProductInterestRateRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ավանդի գրավով վարկային պրոդուկտի տոկոսադրույքը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.FastOverdraftValidations(OnlineBankingApi.Models.Requests.CardNumberRequest)">
+            <summary>
+            Իրականացնում է արագ օվերդրաֆտ ստանալու հայտի ստուգումներ տվյալ քարտի համար
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoanOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ավանդի գրավով վարկի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetLoanStatement(OnlineBankingApi.Models.Requests.LoanStatementRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ժամանակահատվածում նշված վարկի քաղվածքը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetMatureOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է վարկի մարման հայտի տվյալները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.IsAbleToApplyForLoan">
+            <summary>
+            Վերադարձնում է ճիշտ, եթե հաճախորդը կարող է դիմել վարկի համար։
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetMaxAvailableAmountForNewCreditLine(OnlineBankingApi.Models.Requests.GetMaxAvailableAmountForNewCreditLine)">
+            <summary>
+            Վերադարձնում է գռավադրվող գումարի դիմաց վարկային գծին տրամադրվող հասանելի մնացորդը ։
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.LoanController.GetMaxAvailableAmountForNewLoan(OnlineBankingApi.Models.Requests.CurrencyRequest)">
+            <summary>
+            Վերադարձնում է գրավադրվող գումարի դիմաց վարկին տրամադրվող հասանելի մնացորդը։
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.GetMessages(OnlineBankingApi.Models.Requests.MessagesRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի հաղորդագրությունների ցանկը՝ կախված տեսակից (Ուղարկված/Ստացված)
+            </summary>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.GetNumberOfMessages(OnlineBankingApi.Models.Requests.NumberOfMessagesRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի՝ նշված քանակի, նշված տեսակի հաղորդագրությունների ցանկը
+            </summary>
+            <param name="messageCount"></param>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.AddMessage(OnlineBankingApi.Models.Requests.MessageRequest)">
+            <summary>
+            Ուղարկում է տվյալ հաղորդագրությունը
+            </summary>
+            <param name="message"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.DeleteMessage(OnlineBankingApi.Models.Requests.MessageIdRequest)">
+            <summary>
+            Հեռացնում է տվյալ հաղորդագրությունը
+            </summary>
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.MarkMessageAsRead(OnlineBankingApi.Models.Requests.MessageIdRequest)">
+            <summary>
+            Նշում է տվյալ հաղորդագրությունը՝ որպես ընթերցված
+            </summary>
+            <param name="messageId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.GetUnreadMessagesCountByType(OnlineBankingApi.Models.Requests.MessageTypeRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի չկարդացված հաղորդագրությունների քանակը՝ կախված տեսակից (Ուղարկված/Ստացված)
+            </summary>
+            <param name="type"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.GetUnreadedMessagesCount">
+            <summary>
+            Վերադարձնում է հաճախորդի չկարդացված հաղորդագրությունների քանակը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.MessageController.GetMessageAttachmentById(OnlineBankingApi.Models.Requests.MessageIdRequest)">
+            <summary>
+            Վերադարձնում է հաղորդագրության կից ֆայլը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetCardFee(OnlineBankingApi.Models.Requests.CardFeeRequest)">
+            <summary>
+            Վերադարձնում է քարտի միջնորդավճարը
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetSwiftCopyOrderFee">
+            <summary>
+            Վերադարձնում է Swift հաղորդագրության պատճենի ստացման հայտի միջնորդավճարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.SaveAndApproveRemovalOrder(OnlineBankingApi.Models.Requests.RemovalOrderRequest)">
+            <summary>
+            Պահպանում և ուղարկում է գործարքի հեռացման հայտը
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetRemovalOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է գործարքի հեռացման հայտի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetPaymentOrderFutureBalance(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է հաշվի մնացորդը վճարման հանձնարարականի կատարումից հետո
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetPaymentOrderFee(OnlineBankingApi.Models.Requests.PaymentOrderFeeRequest)">
+            <summary>
+            Վերադարձնում է վճարման հանձնարարականի միջնորդավճարի տվյալները
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetAccountsForOrder(OnlineBankingApi.Models.Requests.AccountForOrderRequest)">
+            <summary>
+            Վերադարձնում է տվյալ տեսակի հայտի համար հասանելի հաշիվների ցանկը` ըստ տեսակի (դեբետագրվող/կրեդիտագրվող)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetReferenceOrderFee(OnlineBankingApi.Models.Requests.UrgentSignRequest)">
+            <summary>
+            Վերադարձնում է տեղեկանքի ստացման հայտի միջնորդավճարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetDraftOrders(OnlineBankingApi.Models.Requests.DateFromDateToRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի՝ "Խմբագրվող" կարգավիճակով գործարքները
+            </summary>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetSentOrders(OnlineBankingApi.Models.Requests.DateFromDateToRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի ուղարկված գործարքները
+            </summary>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetApproveReqOrder(OnlineBankingApi.Models.Requests.DateFromDateToRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի՝ "Հաստատված" կարգավիճակով գործարքները
+            </summary>
+            <param name="dateFrom"></param>
+            <param name="dateTo"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrders(OnlineBankingApi.Models.Requests.OrderFilterRequest)">
+            <summary>
+            Վերադարձնում է որոնման տվյալներին համապատասխանող հանձնարարականները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOnlineOrderHistory(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ հայտի պատմությունը
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetConfirmRequiredOrders(OnlineBankingApi.Models.Requests.StartDateEndDateRequest)">
+            <summary>
+            Վերադարձնում է հաստատման ենթակա վճարման հանձնարարականները
+            </summary>
+            <param name="startDate"></param>
+            <param name="endDate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetReestrTransferOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է ռեեստրով վճարման հանձնարարականի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.ApproveReestrTransferOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է ռեեստրով վճարման հայտը)
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetCardToCardTransferFee(OnlineBankingApi.Models.Requests.CardToCardTransferFeeRequest)">
+            <summary>
+            Վերադարձնում է քարտից քարտ փոխանցման միջնորդավճարը
+            </summary>
+            <param name="debitCardNumber"></param>
+            <param name="creditCardNumber"></param>
+            <param name="amount"></param>
+            <param name="currency"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetCardToCardOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քարտից քարտ փոխանցման հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.SaveCardToCardOrder(OnlineBankingApi.Models.Requests.CardToCardOrderRequest)">
+            <summary>
+            Պահպանում է քարտից քարտ փոխանցման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.ApproveCardToCardOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Քարտից քարտ փոխանցման հայտի պահպանում և ուղարկում
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.SavePaymentOrderTemplate(OnlineBankingApi.Models.Requests.PaymentOrderTemplateRequest)">
+            <summary>
+            ՀՀ տարածքում/հաշիվների միջև փոխանցման ձևանմուշի/խմբային ծառայության պահպանում/խմբագրում
+            </summary>
+            <param name="tesmplate"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetHBApplicationOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Տոկենի Ծառայությունների ակտիվացման հայտի Get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetHBActivationOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Տոկենի ակտիվացման հայտի Get
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.SaveOrderGroup(OnlineBankingApi.Models.Requests.SaveOrderGroupRequest)">
+            <summary>
+            Գործարքների խմբի պահպանում
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.ApproveOrders(OnlineBankingApi.Models.Requests.ListDocIdRequest)">
+            <summary>
+            Միաժամանակ 1-ից ավելի գործարքների հաստատում
+            </summary>
+            <param name="ListDocId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrdersList(OnlineBankingApi.Models.Requests.OrderListFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի՝ գործարքները(կախված հայտի տեսակից, գործարքի կարգավիճակից
+            </summary>
+            <param name="orderListFilter"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.SaveCurrencyExchangeOrder(OnlineBankingApi.Models.Requests.CurrencyExchangeOrderRequest)">
+            <summary>
+            Պահպանում է փոխարկման հայտը
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.ManuallyRateChangingAccess(OnlineBankingApi.Models.Requests.ManuallyRateChangingAccessRequest)">
+            <summary>
+            Փոխարկման դեպքում գումարից և արժույթից կախված արժույթի դաշտը փոփոխելու հնարավորության թույլատրում
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrderAttachmentInBase64(OnlineBankingApi.Models.Requests.GUIDRequest)">
+            <summary>
+            Վերադարձնում է հայտին կցված փաստաթուղթը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.ApproveOrdersAsync(OnlineBankingApi.Models.Requests.ListDocIdRequest)">
+            <summary>
+            Միաժամանակ 1-ից ավելի գործարքների հաստատում
+            </summary>
+            <param name="ListDocId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrderServiceFee(OnlineBankingApi.Models.Requests.ServiceFeeRequest)">
+            <summary>
+            միջնորդավճարի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrderAttachments(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Վերադարձնում է հայտին կցված փաստաթղթերը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.OrderController.GetOrderAttachment(OnlineBankingApi.Models.Requests.GUIDRequest)">
+            <summary>
+            Վերադարձնում է հայտին կցված փաստաթուղթը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.SaveUtilityPaymentOrder(OnlineBankingApi.Models.Requests.UtilityPaymentOrderRequest)">
+            <summary>
+            Պահպանում է կոմունալ վճարման հանձնարարականը
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetUtilityPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է կոմունալ վճարման հանձնարարականի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.ApproveUtilityPaymentOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է կոմունալ վճարման հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetVehicleViolationById(OnlineBankingApi.Models.Requests.ViolationIdRequest)">
+            <summary>
+            Վերադարձնում է ՃՈ խախտումները որոշման համարով
+            </summary>
+            <param name="violationId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetVehicleViolationByPsnVehNum(OnlineBankingApi.Models.Requests.VehicleViolationByPsnVehRequest)">
+            <summary>
+            Վերադարձնում է ՃՈ խախտումները մեքենայի հաշվառման համարանիշով և տեխ. անձնագրի համարով
+            </summary>
+            <param name="psn"></param>
+            <param name="vehNum"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetCommunals(OnlineBankingApi.Models.Requests.SearchCommunalRequest)">
+            <summary>
+            Վերադարձնում է համապատասխան կոմունալ վճարումների ցանկ
+            </summary>
+            <param name="searchCommunal"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetCommunalDetails(OnlineBankingApi.Models.Requests.CommunalDetailsRequest)">
+            <summary>
+            Վերադարձնում է համապատասխան կոմունալ վճարման մանրամասները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.DeletePaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Հեռացնում է Փոխանցում ՀՀ տարածքում/Փոխանցում սեփական հաշիվների միջև հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetReceivedFastTransferPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է արագ դրամական համակարգերով ստացված փոխանցման հայտի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.ApproveReceivedFastTransferPaymentOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է արագ դրամական համակարգերով փոխանցման ստացման հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetCustomerDateForInternationalPayment">
+            <summary>
+            Հայտի համար անհրաժեշտ ավտոմատ դաշտերի ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetCommunalsByPhoneNumber(OnlineBankingApi.Models.Requests.SearchCommunalRequest)">
+            <summary>
+            Բջջային համարի որոնում՝ առանց օպերատորի նշման
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.SaveReceivedFastTransferPaymentOrder(OnlineBankingApi.Models.Requests.ReceivedFastTransferPaymentOrderRequest)">
+            <summary>
+            Պահպանում է արագ դրամական համակարգերով փոխանցման ստացման հայտը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PaymentController.GetCrossConvertationVariant(OnlineBankingApi.Models.Requests.CrossConvertationVariantRequest)">
+            <summary>
+            Վերադարձնում է տվյալ արժույթների զույգից cross փոխարժեքի որոշման եղանակը
+            (ցույց է տալիս թե արժույթներից որը մյուսի վրա պետք է բաժանվի)
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PensionSystemController.GetPensionSystemBalance">
+            <summary>
+            Վերադարձնում է կենսաթոշակային ֆոնդի մնացորդը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicTransfers(OnlineBankingApi.Models.Requests.ProductQualityFilterRequest)">
+            <summary>
+            Վերադարձնում է հաճախորդի պարբերական փոխանցումների մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicTransfer(OnlineBankingApi.Models.Requests.ProductIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ պարբերական փոխանցման մանրամասները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicTransferHistory(OnlineBankingApi.Models.Requests.PeriodicTransferHistoryRequest)">
+            <summary>
+            Վերադարձնում է տվյալ ժամանակահատվածում տվյալ պարբերական փոխանցման պատմությունը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.ApprovePeriodicPaymentOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է պարբերական փոխանցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.SavePeriodicPaymentOrder(OnlineBankingApi.Models.Requests.PeriodicPaymentOrderRequest)">
+            <summary>
+            Պահպանում է պարբերական փոխանցման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.SaveBudgetPeriodicPaymentOrder(OnlineBankingApi.Models.Requests.PeriodicBudgetPaymentOrderRequest)">
+            <summary>
+            Պահպանում է պարբերական փոխանցման (բյուջե) հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.SaveUtilityPeriodicPaymentOrder(OnlineBankingApi.Models.Requests.PeriodicUtilityPaymentOrderRequest)">
+            <summary>
+            Պահպանում է պարբերական փոխանցման (կոմունալ) հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Պարբերական փոխանցման հայտի տվյալների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicBudgetPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Պարբերական փոխանցման հայտի (բյուջե) տվյալների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicUtilityPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Պարբերական փոխանցման հայտի (կոմունալ) տվյալների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.SavePeriodicTerminationOrder(OnlineBankingApi.Models.Requests.PeriodicTerminationOrderRequest)">
+            <summary>
+            Պարբերականի փակման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.ApprovePeriodicTerminationOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Պարբերականի փակման հայտի հաստատում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicTerminationOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+             <summary>
+            Պարբերականի փակման հայտի հաստատում
+             </summary>
+             <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.SavePeriodicDataChangeOrder(OnlineBankingApi.Models.Requests.PeriodicTransferDataChangeOrderRequest)">
+            <summary>
+            Պարբերական փոխանցման փոփոխման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.ApprovePeriodicDataChangeOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Պարբերական փոխանցման փոփոխման հայտի հաստատում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PeriodicTransferController.GetPeriodicDataChangeOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Պարբերական փոխանցման փոփոխման հայտի տվյալների ստացում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ProductNoteController.SaveProductNote(OnlineBankingApi.Models.Requests.ProductNoteRequest)">
+            <summary>
+            Պահպանում է հաճախորդի կողմից կատարված նշումը տվյալ պրոդուկտին (օրինակ՝ ընթացիկ հաշվին
+            </summary>
+            <param name="productNote"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ProductNoteController.GetProductNote(OnlineBankingApi.Models.Requests.UniqueIdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ պրոդուկտին համապատասխան հաճախորդի կողմից արված նշումը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.PushNotificationController.SaveNotificationToken(OnlineBankingApi.Models.Requests.NotificationTokenRequest)">
+            <summary>
+            Պահպանում է Firebase տոկենը
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveSwiftCopyOrder(OnlineBankingApi.Models.Requests.SwiftCopyOrderRequest)">
+            <summary>
+            Պահպանում է Swift հաղորդագրության պատճենի ստացման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveSwiftCopyOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է Swift հաղորդագրության պատճենի ստացման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetSwiftCopyOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է Swift պատճենի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetCredentialOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է լիազորագրի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveCredentialOrder(OnlineBankingApi.Models.Requests.CredentialOrderRequest)">
+            <summary>
+            Պահպանում է լիազորագրի հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveCredentialOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Լիազորագրի հայտի ուղարկում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetCustomerDataOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է տվյալների խմբագրման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveCustomerDataOrder(OnlineBankingApi.Models.Requests.CustomerDataOrderRequest)">
+            <summary>
+            Պահպանում է տվյալների խմբագրման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveCustomerDataOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է տվյալների խմբագրման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetAccountsForCredential(OnlineBankingApi.Models.Requests.OperationTypeRequest)">
+            <summary>
+            Վերադարձնում է գործողության տեսակի հաշվեհամարները
+            </summary>
+            <param name="operationType"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetStatementByEmailOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է քաղվածքների էլեկտրոնային ստացման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveStatementByEmailOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է քաղվածքների էլեկտրոնային ստացման հայտը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveStatementByEmailOrder(OnlineBankingApi.Models.Requests.StatmentByEmailOrderRequest)">
+            <summary>
+            Քաղվածքների էլեկտրոնային ստացման հայտի պահպանում
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetReferenceOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է տեղեկանքի ստացման հայտի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveReferenceOrder(OnlineBankingApi.Models.Requests.ReferenceOrderRequest)">
+            <summary>
+            Պահպանում է տեղեկանքի ստացման հայտը
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveReferenceOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում է տեղեկանքի ստացման հայտի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.SaveCashOrder(OnlineBankingApi.Models.Requests.CashOrderRequest)">
+            <summary>
+            Գումարի ստացման և փոխանցման հայտի պահպանում
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.ApproveCashOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Գումարի ստացման և փոխանցման հայտի ուղարկում
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.ReferenceController.GetCashOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է գումարի ստացման և փոխանցման հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.RegistrationController.GetCustomerInfoForAuthentication(OnlineBankingLibrary.Models.CustomerRegistration.CustomerAuthenticationRequest)">
+            <summary>
+            Նույնականացնում է և վերադարձնում է հաճախորդի տվյալները (Արագ գրանցման համակարգ)
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.RegistrationController.RegistratePhysicalCustomer(OnlineBankingLibrary.Models.CustomerRegParams)">
+            <summary>
+            Կախված փոխանցված արժեքներից իդենտիֆիկացնում է հաճախորդին, և պահպանում գրանցման համար անհրաժեշտ նախնական տվյալները
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.ChangeTemplateStatus(OnlineBankingApi.Models.Requests.ChangeTemplateStatusRequest)">
+            <summary>
+            Ձևանմուշի կարգավիճակի փոփոխում
+            </summary>
+            <param name="templateId"></param>
+            <param name="templateStatus"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetPaymentOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Վերադարձնում է Փոխանցում ՀՀ տարածքում/Փոխանցում հաշիվների միջև ձևանմուշը/խմբային ծառայությունը
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetBudgetPaymentOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Վերադարձնում է բյուջե փոխանցման ձևանմուշը/խմբային ծառայությունը
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetLoanMatureOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Վերադարձնում է վարկի մարման ձևանմուշը/խմբային ծառայությունը
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetUtilityPaymentOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Վերադարձնում է կոմունալ վճարման ձևանմուշը/խմբային ծառայությունը
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetCustomerTemplates">
+            <summary>
+            Վերադարձնում է տվյալ հաճախորդի ձևանմուշների ցանկը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetCardToCardOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Վերադարձնում է քարտից քարտ փոխանցման ձևանմուշը/խմբային ծառայությունը
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.SaveCardToCardOrderTemplate(OnlineBankingApi.Models.Requests.CardToCardOrderTemplateRequest)">
+            <summary>
+            Քարտից քարտ փոխանցման ձևանմուշի պահպանում
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.SaveInternationalOrderTemplate(OnlineBankingApi.Models.Requests.InternationalOrderTemplateRequest)">
+            <summary>
+            Միջազգային փոխանցման ձևանմուշի/խմբային ծառայության պահպանում/խմբագրում
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.GetInternationalOrderTemplate(OnlineBankingApi.Models.Requests.TemplateIdRequest)">
+            <summary>
+            Միջազգային փոխանցման ձևանմուշի GET
+            </summary>
+            <param name="templateId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.SaveBudgetPaymentOrderTemplate(OnlineBankingApi.Models.Requests.BudgetOrderTemplateRequest)">
+            <summary>
+            Բյուջե փոխանցման ձևանմուշի/խմբային ծառայության պահպանում
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.SaveCurrencyExchangeOrderTemplate(OnlineBankingApi.Models.Requests.CurrencyExchangeOrderTemplateRequest)">
+            <summary>
+            Փոխարկման ձևանմուշի/խմբային ծառայության պահպանում
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TemplateController.SaveLoanMatureOrderTemplate(OnlineBankingApi.Models.Requests.LoanMatureOrderTemplateRequest)">
+            <summary>
+            Վարկի մարման՝ որպես խմբային ծառայության պահպանում
+            </summary>
+            <param name="template"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.SavePaymentOrder(OnlineBankingApi.Models.Requests.PaymentOrderRequest)">
+            <summary>
+            Պահպանում է վճարման հանձնարարականը (Փոխանցում ՀՀ տարածքում, սեփական հաշիվների միջև
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է Փոխանցում ՀՀ տարածքում/սեփական հաշիվների միջև գործարքի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.ApprovePaymentOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Հաստատում/ուղարկում է Փոխանցում ՀՀ տարածքում/Փոխանցում սեփական հաշիվների միջև հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetInternationalPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է միջազգային վճարման հանձնարարականի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.SaveInternationalPaymentOrder(OnlineBankingApi.Models.Requests.InternationalPaymentOrderRequest)">
+            <summary>
+            Միջազգային փոխանցման հայտի պահպանում
+            </summary>
+            <param name="order"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.ApproveInternationalPaymentOrder(OnlineBankingApi.Models.Requests.ApproveIdRequest)">
+            <summary>
+            Ուղարկում է միջազգային փոխանցման հայտը
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetBudgetPaymentOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է տվյալ բյուջե փոխանցման հայտի տվյալները
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.SaveBudgetPaymentOrder(OnlineBankingApi.Models.Requests.BudgetPaymentOrderRequest)">
+            <summary>
+            Պահպանում է բյուջե փոխանցման վճարման հանձնարարականը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetInternationalPaymentOrderFee(OnlineBankingApi.Models.Requests.InternationalPaymentOrderFeeRequest)">
+            <summary>
+            Վերադարձնում է միջազգային փոխանցման միջնորդավճարը
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetReceivedFastTransferOrderRejectReason(OnlineBankingApi.Models.Requests.OrderIdRequest)">
+            <summary>
+            Պահպանում է արագ դրամական համակարգերով փոխանցման ստացման հայտը
+            </summary>
+            <param name="orderId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.ReadXmlFile(OnlineBankingApi.Models.Requests.FileIdRequest)">
+            <summary>
+            XML ֆայլի կարդացում և գործարքների պահպանում
+            </summary>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.CheckExcelRows(OnlineBankingApi.Models.Requests.CheckExcelRowsRequest)">
+            <summary>
+            Ստուգում է ներբեռնվող Ecxel ֆայլը
+            </summary>
+            <param name="reestrTransferAdditionalDetails"></param>
+            <param name="debetAccount"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.SaveReestrTransferOrder(OnlineBankingApi.Models.Requests.SaveReestrTransferOrderRequest)">
+            <summary>
+            Պահպանում է ռեեստրի հայտը
+            </summary>
+            <param name="order"></param>
+            <param name="fileId"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetCurrencyExchangeOrder(OnlineBankingApi.Models.Requests.IdRequest)">
+            <summary>
+            Վերադարձնում է տարբեր արժույթով հաշիվների միջև փոխանցման հայտի տվյալները
+            </summary>
+            <param name="request"></param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetInternationalOrderPrefilledData">
+            <summary>
+            Միջազգային փոխանցման նախնական արժեքներ
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Controllers.TransferController.GetBankInfoViaSwiftCode(OnlineBankingApi.Models.Requests.SwiftCodeRequest)">
+            <summary>
+            Ստանալ բանկի մասին ինֆորմացիա Swift կոդով
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Filters.CheckSignFilter.GenerateSignData(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            Sign լինող տվյալների հավաքագրում Dictionary-ի մեջ
+            </summary>
+            <param name="TransactionID">գորժարքի կոդ</param>
+            <param name="SenderAccount">ուղարկողի հաշվեհամար</param>
+            <param name="RecepientAccount"> ստացողի հաշվեհամար</param>
+            <param name="Amount">գումար</param>
+            <param name="IpAddress">IP հասցե</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Filters.CheckSignFilter.GetOrderType(XBS.OrderType)">
+            <summary>
+            XBS-ի Հայտի տեսակի (OrderType) համատեղում OnlineBankingApi-ի հայտի տեսակի (ApprovalOrderType) հետ
+            </summary>
+            <param name="type">XBS -ի Հայտի տեսակ</param>
+            <returns></returns>
+        </member>
+        <member name="M:OnlineBankingApi.Filters.CheckSignFilter.CollectParameters(System.String,System.String,System.String,System.String,System.String)">
+            <summary>
+            GenerateSignData մեթոդի համար անհրաժեշտ պարամետրերի հավաքում / կազմում
+            </summary>
+            <param name="transactionID">գորժարքի կոդ</param>
+            <param name="senderAccount">ուղարկողի հաշվեհամար</param>
+            <param name="recepientAccount"> ստացողի հաշվեհամար</param>
+            <param name="amount">գումար</param>
+            <param name="ipAddress">IP հասցե</param>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.AttachCardRequest.CardHolderName">
+            <summary>
+            Քարտի վրա նշված Անուն Ազգանուն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.AttachCardRequest.CardNumber">
+            <summary>
+            Քարտի համար
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.AttachCardRequest.Cvv">
+            <summary>
+            Քարտի cvv
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.AttachCardRequest.ExpireMonth">
+            <summary>
+            Քարտի վավերականության ժամկետ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.AttachCardRequest.ExpireYear">
+            <summary>
+            Քարտի վավերականության ժամկետ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.CardTariffsByCardTypeRequest.CardType">
+            <summary>
+            Քարտի տեսակ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.CardTariffsByCardTypeRequest.PeriodicityType">
+            <summary>
+            Հաճախականություն (անհրաժեշտ է փոխանցել AMEX քարտատեսակների դեպքում)
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.CardTariffsByCardTypeRequest.Currency">
+            <summary>
+            Արժույթ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.CVVNoteRequest.CVVNote">
+            <summary>
+            Հաճախորդի կողմից մուտքագրված CVV կոդ (որպես նշում)
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.GenerateTokenRequest.ProductId">
+            <summary>
+            Թոքենիզացվող քարտի ունիկալ համար
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.GenerateTokenRequest.MobileUserName">
+            <summary>
+            Օգտագործողի անուն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.PasswordResetRequest.UserName">
+            <summary>
+            Օգտագործողի մուտքանուն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.PasswordResetRequest.OTP">
+            <summary>
+            Թվային կոդ
+            </summary>
+        </member>
+        <member name="T:OnlineBankingApi.Models.Requests.SaveOnlineUserPhotoRequest">
+            <summary>
+            Պրոֆիլի նկարի պա
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.SaveOnlineUserPhotoRequest.Photo">
+            <summary>
+            Նկարի base64
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.SaveOnlineUserPhotoRequest.Extension">
+            <summary>
+            Ֆայլի տեսակ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.TokenOperationRequest.TokenSerial">
+            <summary>
+            User Token Number
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.TokenOperationRequest.Otp">
+            <summary>
+            Custom generated Otp from sms to verify user
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.TokenOperationRequest.IsNewHbUser">
+            <summary>
+            If true we migrate users to gemalto if false we replace old token for new (SaveAndApproveTokenReplacementOrder)
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.TokenOperationRequestWithAuthorization.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.TokenOperationRequestWithAuthorization.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.VerifyUserAndSendOtpSmsRequest.UserName">
+            <summary>
+            User Name
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Requests.VerifyUserAndSendOtpSmsRequest.Password">
+            <summary>
+            Password
+            </summary>
+        </member>
+        <member name="T:OnlineBankingApi.Models.Response">
+            <summary>
+            Response-ների մինիմալ ֆորմատ
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Response.Description">
+            <summary>
+            Հաղորդագրություն
+            </summary>
+        </member>
+        <member name="P:OnlineBankingApi.Models.Response.ResultCode">
+            <summary>
+            Արդյունքի կոդ
+            </summary>
+        </member>
+        <member name="M:OnlineBankingApi.Utilities.ContractManager.GetLoanTermsSheetContent(System.Byte,System.Int64)">
+            <summary>
+            Էական պայմանների անհատական թերթիկի ստացում byte[] ֆորմատով
+            </summary>
+            <param name="loanType"></param>
+            <param name="orderid"></param>
+            <returns></returns>
+        </member>
+        <member name="T:OnlineBankingApi.Utilities.ValidationError">
+            <summary>
+            
+            </summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.ArcaCardReflection">
+            <summary>Holder for reflection information generated from Protos/ArcaCard.proto</summary>
+        </member>
+        <member name="P:ArcaCardAttachmentService.ArcaCardReflection.Descriptor">
+            <summary>File descriptor for Protos/ArcaCard.proto</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.CardAttachmentRequest">
+            <summary>
+            The request message containing the attach request model
+            </summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.IDFieldNumber">
+            <summary>Field number for the "ID" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.CustomerNumberFieldNumber">
+            <summary>Field number for the "CustomerNumber" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.CardNumberFieldNumber">
+            <summary>Field number for the "CardNumber" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.ExpireYearFieldNumber">
+            <summary>Field number for the "ExpireYear" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.ExpireMonthFieldNumber">
+            <summary>Field number for the "ExpireMonth" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.CardHolderNameFieldNumber">
+            <summary>Field number for the "CardHolderName" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.BindingIdFieldNumber">
+            <summary>Field number for the "BindingId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.BankIdFieldNumber">
+            <summary>Field number for the "BankId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.QualityFieldNumber">
+            <summary>Field number for the "Quality" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.LanguageFieldNumber">
+            <summary>Field number for the "Language" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.PageViewFieldNumber">
+            <summary>Field number for the "PageView" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentRequest.CvcFieldNumber">
+            <summary>Field number for the "Cvc" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.CardAttachmentResponse">
+            <summary>
+            The response message containing the register response model
+            </summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentResponse.RedirectFieldNumber">
+            <summary>Field number for the "Redirect" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentResponse.AcsUrlFieldNumber">
+            <summary>Field number for the "AcsUrl" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentResponse.PaReqFieldNumber">
+            <summary>Field number for the "PaReq" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.CardAttachmentCompletionRequest">
+            <summary>
+            The response message containing the register completion response model
+            </summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentCompletionRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentCompletionRequest.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.CardAttachmentCompletionResponse">
+            <summary>
+            The response message containing the register completion response model
+            </summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardAttachmentCompletionResponse.AttachedFieldNumber">
+            <summary>Field number for the "Attached" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.DeleteAttachedCardRequest.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.DeleteAttachedCardResponse">
+            <summary>
+            The response message containing the register completion response model
+            </summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.DeleteAttachedCardResponse.DeletedFieldNumber">
+            <summary>Field number for the "Deleted" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardResponse.AttachedCardsFieldNumber">
+            <summary>Field number for the "AttachedCards" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCard.IdFieldNumber">
+            <summary>Field number for the "Id" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCard.CardNumberFieldNumber">
+            <summary>Field number for the "CardNumber" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCard.CardHolderNameFieldNumber">
+            <summary>Field number for the "CardHolderName" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCard.ExpireDateStringFieldNumber">
+            <summary>Field number for the "ExpireDateString" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCard.BankNameFieldNumber">
+            <summary>Field number for the "BankName" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardValidationRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardValidationResponse.IsValidFieldNumber">
+            <summary>Field number for the "IsValid" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardValidationResponse.MessageFieldNumber">
+            <summary>Field number for the "Message" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.BindingIdFieldNumber">
+            <summary>Field number for the "BindingId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.LanguageFieldNumber">
+            <summary>Field number for the "Language" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.AmountFieldNumber">
+            <summary>Field number for the "Amount" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.PageViewFieldNumber">
+            <summary>Field number for the "PageView" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.CustomerNumberFieldNumber">
+            <summary>Field number for the "CustomerNumber" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.CurrencyFieldNumber">
+            <summary>Field number for the "Currency" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.OrderTypeFieldNumber">
+            <summary>Field number for the "OrderType" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentRequest.OrderSubTypeFieldNumber">
+            <summary>Field number for the "OrderSubType" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.CardBindingPaymentRequest.Types">
+            <summary>Container for nested types declared in the CardBindingPaymentRequest message type.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentResponse.PayedFieldNumber">
+            <summary>Field number for the "Payed" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentResponse.CardIdFieldNumber">
+            <summary>Field number for the "CardId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.CardBindingPaymentResponse.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardOrderTypeRequest.OrderTypeFieldNumber">
+            <summary>Field number for the "OrderType" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardOrderTypeRequest.OrderSubTypeFieldNumber">
+            <summary>Field number for the "OrderSubType" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AttachedCardOrderTypeRequest.CurrencyFieldNumber">
+            <summary>Field number for the "Currency" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.AccountNumberByOrderTypeResponse.AccountNumberFieldNumber">
+            <summary>Field number for the "AccountNumber" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.OrderDetailsRequest.DocIDFieldNumber">
+            <summary>Field number for the "DocID" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.OrderDetailsRequest.CardIdFieldNumber">
+            <summary>Field number for the "CardId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.OrderDetailsRequest.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.OrderDetailsResponse.SavedFieldNumber">
+            <summary>Field number for the "Saved" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.ReverseOrderRequest.MdOrderFieldNumber">
+            <summary>Field number for the "MdOrder" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.ReverseOrderRequest.UserIdFieldNumber">
+            <summary>Field number for the "UserId" field.</summary>
+        </member>
+        <member name="F:ArcaCardAttachmentService.ReverseOrderResponse.ReversedFieldNumber">
+            <summary>Field number for the "Reversed" field.</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.ArcaCard">
+            <summary>
+            The arca card service definition.
+            </summary>
+        </member>
+        <member name="P:ArcaCardAttachmentService.ArcaCard.Descriptor">
+            <summary>Service descriptor</summary>
+        </member>
+        <member name="T:ArcaCardAttachmentService.ArcaCard.ArcaCardClient">
+            <summary>Client for ArcaCard</summary>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.#ctor(Grpc.Core.ChannelBase)">
+            <summary>Creates a new client for ArcaCard</summary>
+            <param name="channel">The channel to use to make remote calls.</param>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.#ctor(Grpc.Core.CallInvoker)">
+            <summary>Creates a new client for ArcaCard that uses a custom <c>CallInvoker</c>.</summary>
+            <param name="callInvoker">The callInvoker to use to make remote calls.</param>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.#ctor">
+            <summary>Protected parameterless constructor to allow creation of test doubles.</summary>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.#ctor(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Protected constructor to allow creation of configured clients.</summary>
+            <param name="configuration">The client configuration.</param>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrder(ArcaCardAttachmentService.CardAttachmentRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            attach card
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrder(ArcaCardAttachmentService.CardAttachmentRequest,Grpc.Core.CallOptions)">
+            <summary>
+            attach card
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderAsync(ArcaCardAttachmentService.CardAttachmentRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            attach card
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderAsync(ArcaCardAttachmentService.CardAttachmentRequest,Grpc.Core.CallOptions)">
+            <summary>
+            attach card
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderCompletion(ArcaCardAttachmentService.CardAttachmentCompletionRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            attach card completion
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderCompletion(ArcaCardAttachmentService.CardAttachmentCompletionRequest,Grpc.Core.CallOptions)">
+            <summary>
+            attach card completion
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderCompletionAsync(ArcaCardAttachmentService.CardAttachmentCompletionRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+            <summary>
+            attach card completion
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+            <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+            <param name="cancellationToken">An optional token for canceling the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.AtachCardOrderCompletionAsync(ArcaCardAttachmentService.CardAttachmentCompletionRequest,Grpc.Core.CallOptions)">
+            <summary>
+            attach card completion
+            </summary>
+            <param name="request">The request to send to the server.</param>
+            <param name="options">The options for the call.</param>
+            <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.DeleteAttachedCardById(ArcaCardAttachmentService.DeleteAttachedCardRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Delete Attached Card
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.DeleteAttachedCardById(ArcaCardAttachmentService.DeleteAttachedCardRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Delete Attached Card
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.DeleteAttachedCardByIdAsync(ArcaCardAttachmentService.DeleteAttachedCardRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Delete Attached Card
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.DeleteAttachedCardByIdAsync(ArcaCardAttachmentService.DeleteAttachedCardRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Delete Attached Card
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetAttachedCards(ArcaCardAttachmentService.AttachedCardRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Get Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetAttachedCards(ArcaCardAttachmentService.AttachedCardRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Get Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetAttachedCardsAsync(ArcaCardAttachmentService.AttachedCardRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Get Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetAttachedCardsAsync(ArcaCardAttachmentService.AttachedCardRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Get Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ValidateAttachedCards(ArcaCardAttachmentService.AttachedCardValidationRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Validate Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ValidateAttachedCards(ArcaCardAttachmentService.AttachedCardValidationRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Validate Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ValidateAttachedCardsAsync(ArcaCardAttachmentService.AttachedCardValidationRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Validate Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ValidateAttachedCardsAsync(ArcaCardAttachmentService.AttachedCardValidationRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Validate Attached Cards
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ArcaOrderBindingPayment(ArcaCardAttachmentService.CardBindingPaymentRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Payment By Binding
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ArcaOrderBindingPayment(ArcaCardAttachmentService.CardBindingPaymentRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Payment By Binding
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ArcaOrderBindingPaymentAsync(ArcaCardAttachmentService.CardBindingPaymentRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Payment By Binding
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ArcaOrderBindingPaymentAsync(ArcaCardAttachmentService.CardBindingPaymentRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Payment By Binding
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetMerchantAccountNumberByOrderType(ArcaCardAttachmentService.AttachedCardOrderTypeRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Get Merchant Account Number by order type
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetMerchantAccountNumberByOrderType(ArcaCardAttachmentService.AttachedCardOrderTypeRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Get Merchant Account Number by order type
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetMerchantAccountNumberByOrderTypeAsync(ArcaCardAttachmentService.AttachedCardOrderTypeRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Get Merchant Account Number by order type
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.GetMerchantAccountNumberByOrderTypeAsync(ArcaCardAttachmentService.AttachedCardOrderTypeRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Get Merchant Account Number by order type
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.SaveAttachedCardOrderDetails(ArcaCardAttachmentService.OrderDetailsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Save Attach Card Payment Order Details
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.SaveAttachedCardOrderDetails(ArcaCardAttachmentService.OrderDetailsRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Save Attach Card Payment Order Details
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.SaveAttachedCardOrderDetailsAsync(ArcaCardAttachmentService.OrderDetailsRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Save Attach Card Payment Order Details
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.SaveAttachedCardOrderDetailsAsync(ArcaCardAttachmentService.OrderDetailsRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Save Attach Card Payment Order Details
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ReverseOrderById(ArcaCardAttachmentService.ReverseOrderRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Reverse Payment Order
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ReverseOrderById(ArcaCardAttachmentService.ReverseOrderRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Reverse Payment Order
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The response received from the server.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ReverseOrderByIdAsync(ArcaCardAttachmentService.ReverseOrderRequest,Grpc.Core.Metadata,System.Nullable{System.DateTime},System.Threading.CancellationToken)">
+             <summary>
+            Reverse Payment Order
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="headers">The initial metadata to send with the call. This parameter is optional.</param>
+             <param name="deadline">An optional deadline for the call. The call will be cancelled if deadline is hit.</param>
+             <param name="cancellationToken">An optional token for canceling the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.ReverseOrderByIdAsync(ArcaCardAttachmentService.ReverseOrderRequest,Grpc.Core.CallOptions)">
+             <summary>
+            Reverse Payment Order
+             </summary>
+             <param name="request">The request to send to the server.</param>
+             <param name="options">The options for the call.</param>
+             <returns>The call object.</returns>
+        </member>
+        <member name="M:ArcaCardAttachmentService.ArcaCard.ArcaCardClient.NewInstance(Grpc.Core.ClientBase.ClientBaseConfiguration)">
+            <summary>Creates a new instance of client from given <c>ClientBaseConfiguration</c>.</summary>
+        </member>
+    </members>
+</doc>

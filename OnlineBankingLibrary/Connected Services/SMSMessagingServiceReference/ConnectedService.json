@@ -1,0 +1,27 @@
+﻿{
+  "ProviderId": "Microsoft.VisualStudio.ConnectedService.Wcf",
+  "Version": "15.0.31022.994",
+  "GettingStartedDocument": {
+    "Uri": "https://go.microsoft.com/fwlink/?linkid=858517"
+  },
+  "ExtendedData": {
+    "Uri": "http://wcf01-test:89/SMSMessagingService/SMSMessagingService.svc",
+    "Namespace": "SMSMessagingServiceReference",
+    "SelectedAccessLevelForGeneratedClass": "Public",
+    "GenerateMessageContract": false,
+    "ReuseTypesinReferencedAssemblies": false,
+    "ReuseTypesinAllReferencedAssemblies": true,
+    "CollectionTypeReference": {
+      "Item1": "System.Collections.Generic.List`1",
+      "Item2": "System.Collections.dll"
+    },
+    "DictionaryCollectionTypeReference": {
+      "Item1": "System.Collections.Generic.Dictionary`2",
+      "Item2": "System.Collections.dll"
+    },
+    "CheckedReferencedAssemblies": [],
+    "InstanceId": null,
+    "Name": "SMSMessagingServiceReference",
+    "Metadata": {}
+  }
+}

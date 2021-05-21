@@ -1,0 +1,7 @@
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.csprojAssemblyReference.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.Resources.SharedResource.en.resources
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.csproj.GenerateResource.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.AssemblyInfoInputs.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.AssemblyInfo.cs
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.csproj.CoreCompileInputs.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingApi\obj\Debug\netcoreapp3.1\OnlineBankingApi.MvcApplicationPartsAssemblyInfo.cache

@@ -1,0 +1,825 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="CVV կոդը պետք է լինի 3 կամ 4 նիշ։" xml:space="preserve">
+    <value>The CVV code must be 3 or 4 characters</value>
+  </data>
+  <data name="Id ունիկալ համարը լրացված չէ։" xml:space="preserve">
+    <value>The unique Id number is not entered</value>
+  </data>
+  <data name="Մեկանգամյա թվային Բաժանորդի կոդը բացակայում է։" xml:space="preserve">
+    <value>One-time digital code is missing</value>
+  </data>
+  <data name="Աղբյուրն ընտրված չէ։" xml:space="preserve">
+    <value>The source is not selected</value>
+  </data>
+  <data name="Ամսաթվի արժեքը սխալ է։" xml:space="preserve">
+    <value>Wrong date entered</value>
+  </data>
+  <data name="Այլ անձի (պարտատիրոջ) անուն ազգանուն / անվանումը բացակայում է։" xml:space="preserve">
+    <value>“Creditor Name/Surname” field is not  entered</value>
+  </data>
+  <data name="Այլ անձի (պարտատիրոջ) փաստաթղթի համարը բացակայում է։" xml:space="preserve">
+    <value>Creditor document is not  entered</value>
+  </data>
+  <data name="Անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Enter only digits</value>
+  </data>
+  <data name="Անհրաժեշտ է փոխանցել արժույթը։" xml:space="preserve">
+    <value>The currency is not entered</value>
+  </data>
+  <data name="Անուն Ազգանունը  բացակայում է։" xml:space="preserve">
+    <value>Name/Surname is missing</value>
+  </data>
+  <data name="Առաջին վճարման օրվա արժեքը սխալ է։" xml:space="preserve">
+    <value>Wrong first payment day</value>
+  </data>
+  <data name="Առկա է դաշտերի անհամապատասխանություն։" xml:space="preserve">
+    <value>Mismatching fields</value>
+  </data>
+  <data name="Ավանդի արժույթ դաշտը պարտադիր է։" xml:space="preserve">
+    <value>Тhe deposit currency  is required</value>
+  </data>
+  <data name="Ավանդի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>The deposit type is not selected</value>
+  </data>
+  <data name="Ավանդի տեսակը նշված չէ։" xml:space="preserve">
+    <value>The deposit type is not selected</value>
+  </data>
+  <data name="Ավանդի օպցիան ընտրված չէ։" xml:space="preserve">
+    <value>The deposit option is not selected</value>
+  </data>
+  <data name="Նվազագույն գումար պետք է փոքր լինի առավելագույնից։" xml:space="preserve">
+    <value>The minimum amount must be less than the maximum</value>
+  </data>
+  <data name="Արագ օվերդրաֆթի գումարն ընտրված չէ։" xml:space="preserve">
+    <value>The overdraft amount is not selected</value>
+  </data>
+  <data name="Արժույթ դաշտը լրացված չէ։" xml:space="preserve">
+    <value>The currency is not entered</value>
+  </data>
+  <data name="Արժույթ դաշտը պարտադիր է։" xml:space="preserve">
+    <value>The currency is required</value>
+  </data>
+  <data name="Արժույթը մուտքագրված չէ։" xml:space="preserve">
+    <value>The currency is missing</value>
+  </data>
+  <data name="Արժույթն ընտրված չէ։" xml:space="preserve">
+    <value>The currency is not selected</value>
+  </data>
+  <data name="Բաժանորդի համարի երկարությունը պետք է լինի 6 նիշ։" xml:space="preserve">
+    <value>Subscriber number must be 6 characters</value>
+  </data>
+  <data name="Բաժանորդի համարի երկարությունը պետք է լինի 7 նիշ։" xml:space="preserve">
+    <value>Subscriber number must be 7 characters</value>
+  </data>
+  <data name="Բաժանորդի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Subscriber type is not selected</value>
+  </data>
+  <data name="Բանկի կոդը նշված չէ։" xml:space="preserve">
+    <value>Bank code is missing</value>
+  </data>
+  <data name="Բանկի կոդը պարտադիր է։" xml:space="preserve">
+    <value>Bank code is required</value>
+  </data>
+  <data name="Բանկի կոդը սխալ է։" xml:space="preserve">
+    <value>Wrong bank code</value>
+  </data>
+  <data name="Բլոկավորման պատճառն ընտրված չէ։" xml:space="preserve">
+    <value>No reason selected for blocking</value>
+  </data>
+  <data name="Բյուջետային հաշվեհամարը սխալ է։" xml:space="preserve">
+    <value>Wrong budget account</value>
+  </data>
+  <data name="Գաղտնաբառ դաշտը պարտադիր դաշտ է։" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="Գործարքի համարը լրացված չէ։" xml:space="preserve">
+    <value>Transaction number is missing</value>
+  </data>
+  <data name="Գործարքի համարը պետք է 0-ից մեծ լինի։" xml:space="preserve">
+    <value>The transaction number must be greater than 0</value>
+  </data>
+  <data name="Գործարքի համարը սխալ է։" xml:space="preserve">
+    <value>Wrong transaction number</value>
+  </data>
+  <data name="Գործարքի համարը բացակայում է։" xml:space="preserve">
+    <value>The transaction number is missing</value>
+  </data>
+  <data name="Գործարքի քանակը պետք է լինի 100։" xml:space="preserve">
+    <value>Number of transactions must be 100</value>
+  </data>
+  <data name="Գործարքների խմբի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>The type of transactions group is not selected</value>
+  </data>
+  <data name="Գործարքների քանակը պարտադիր է և պետք է լինի 100։" xml:space="preserve">
+    <value>Number of transactions is mandatory and must be 100</value>
+  </data>
+  <data name="Գործարքների քանակը պարտադիր է։" xml:space="preserve">
+    <value>Number of transactions is mandatory</value>
+  </data>
+  <data name="Գործողության տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Type of action is required</value>
+  </data>
+  <data name="Գումար դաշտը պարտադիր է։" xml:space="preserve">
+    <value>The amount is required</value>
+  </data>
+  <data name="Գումար մուտքագրված չէ։" xml:space="preserve">
+    <value>The amount is missing</value>
+  </data>
+  <data name="Գումարը պետք է մեծ լինի 0-ից։" xml:space="preserve">
+    <value>The amount must be greater than 0</value>
+  </data>
+  <data name="Գումարի առավելագույն չափը փոքր է նվազագույն չափից։" xml:space="preserve">
+    <value>The minimum amount must be less than the maximum</value>
+  </data>
+  <data name="Գրանցման Բաժանորդի կոդը բացակայում է։" xml:space="preserve">
+    <value>Registration code is missing</value>
+  </data>
+  <data name="Գրավադրված գումարի արժույթն ընտրված չէ։" xml:space="preserve">
+    <value>The currency of the collateral amount is not selected</value>
+  </data>
+  <data name="Ելքագրվող քարտի համարը պարտադիր է։" xml:space="preserve">
+    <value>Sender card number is required</value>
+  </data>
+  <data name="Ելքագրվող  քարտի համարը բացակայում է։" xml:space="preserve">
+    <value>Sender card number is missing</value>
+  </data>
+  <data name="Ելքագրվող հաշիվը բացակայում է։" xml:space="preserve">
+    <value>Debit account is missing</value>
+  </data>
+  <data name="Ելքագրվող հաշվի արժույթ դաշտը պարտադիր է։" xml:space="preserve">
+    <value>Debit account currency is required</value>
+  </data>
+  <data name="Ելքագրվող հաշվում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Debit account must contain only digits</value>
+  </data>
+  <data name="Ելքագրվող հաշվի հաշվեհամարը պարտադիր է։" xml:space="preserve">
+    <value>Sender card number is required</value>
+  </data>
+  <data name="Ենթատեսակը ընտրված չէ։" xml:space="preserve">
+    <value>Subtype is not selected</value>
+  </data>
+  <data name="Ենթատեսակը սխալ է ընտրված։" xml:space="preserve">
+    <value>Wrong subtype</value>
+  </data>
+  <data name="Երրորդ անձն ընտրված չէ։" xml:space="preserve">
+    <value>Third person is not selected</value>
+  </data>
+  <data name="Մեկանգամյա թվայինն կոդը լրացված չէ։" xml:space="preserve">
+    <value>One-time digital code is missing</value>
+  </data>
+  <data name="Մեկանգամյա թվային կոդը մուտքագրված չէ։" xml:space="preserve">
+    <value>One-time digital code is missing</value>
+  </data>
+  <data name="Խմբի անվանումը նշված չէ։" xml:space="preserve">
+    <value>Group name is missing</value>
+  </data>
+  <data name="Խմբի կարգավիճակը նշված չէ։" xml:space="preserve">
+    <value>Group status is missing</value>
+  </data>
+  <data name="Խմբի կարգավիճակն ընտրված չէ։" xml:space="preserve">
+    <value>Group status is not selected</value>
+  </data>
+  <data name="Խմբի համարը չի կարող բացասական լինել։" xml:space="preserve">
+    <value>Group number cannot be a negative</value>
+  </data>
+  <data name="Խմբի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Group number is missing</value>
+  </data>
+  <data name="Խմբի տեսակը նշված չէ։" xml:space="preserve">
+    <value>Group type is not selected</value>
+  </data>
+  <data name="Խմբի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Group type is not selected</value>
+  </data>
+  <data name="Կարգավիճակն ընտրված չէ։" xml:space="preserve">
+    <value>Status  is not selected</value>
+  </data>
+  <data name="Բաժանորդի կոդը բացակայում է։" xml:space="preserve">
+    <value>Subscriber number is missing</value>
+  </data>
+  <data name="Կոմունալ վճարումների պարբերականությունը պետք է լինի 1 ամիս։" xml:space="preserve">
+    <value>The frequency of recurrent utility transfer should be 1 month</value>
+  </data>
+  <data name="Կոմունալի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Utility type is not selected</value>
+  </data>
+  <data name="Կոնտակտի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Contact number is missing</value>
+  </data>
+  <data name="Կոնտակտի ունիկալ համարը սխալ է։" xml:space="preserve">
+    <value>Wrong contact number</value>
+  </data>
+  <data name="Մուտքագրվող քարտի համարը բացակայում է։" xml:space="preserve">
+    <value>Recipient card number is missing</value>
+  </data>
+  <data name="Հաղորդագրության համարը նշված չէ։" xml:space="preserve">
+    <value>Message number is missing</value>
+  </data>
+  <data name="Հաղորդագրության տեսակը նշված չէ։" xml:space="preserve">
+    <value>Message type is missing</value>
+  </data>
+  <data name="Հաղորդագրությունների տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Message type is not selected</value>
+  </data>
+  <data name="Հաճախորդի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Customer type is not selected</value>
+  </data>
+  <data name="Համատեղ շահառուն ընտրված չէ։" xml:space="preserve">
+    <value>Joint beneficiary is not selected</value>
+  </data>
+  <data name="Հայտի ենթատեսակը պարտադիր է։" xml:space="preserve">
+    <value>Application subtype is required</value>
+  </data>
+  <data name="հայտի ենթատեսակը սխալ է։" xml:space="preserve">
+    <value>Wrong application subtype</value>
+  </data>
+  <data name="Հայտի ենթատեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Application subtype is not selected</value>
+  </data>
+  <data name="Հայտի տեսակը պարտադիր է։" xml:space="preserve">
+    <value>Application type is required</value>
+  </data>
+  <data name="Հայտի տեսակը սխալ է։" xml:space="preserve">
+    <value>Wrong application type</value>
+  </data>
+  <data name="Հայտի տեսակի նշված չէ։" xml:space="preserve">
+    <value>Application type is not selected</value>
+  </data>
+  <data name="Հայտի տեսակի պետք է լինի 159։" xml:space="preserve">
+    <value>Application type must be 159</value>
+  </data>
+  <data name="Հայտի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Application type is not selected</value>
+  </data>
+  <data name="Հանձնարարականի ունիկալ համարը պարտադիր է։" xml:space="preserve">
+    <value>Order number is required</value>
+  </data>
+  <data name="Հաշվառման համարանիշը լրացված չէ։" xml:space="preserve">
+    <value>State license number is not entered</value>
+  </data>
+  <data name="Հաշվառման համարանիշը սխալ է:" xml:space="preserve">
+    <value>Wrong state license number</value>
+  </data>
+  <data name="Հաշվառման վկայագիրը (տեխ. անձնագիր) լրացված չէ։" xml:space="preserve">
+    <value>Technical passport number  is missing</value>
+  </data>
+  <data name="Հաշվառման վկայագրի համարը սխալ է։" xml:space="preserve">
+    <value>Technical passport number is wrong</value>
+  </data>
+  <data name="Հաշվեհամար դաշտը բացակայում է։" xml:space="preserve">
+    <value>Account number field is missing</value>
+  </data>
+  <data name="Հաշվեհամար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Account number field must contain only digits</value>
+  </data>
+  <data name="Հաշվեհամարը բացակայում է։" xml:space="preserve">
+    <value>Account number is missing</value>
+  </data>
+  <data name="Հաշվեհամարը պարտադիր է։" xml:space="preserve">
+    <value>Account number is required</value>
+  </data>
+  <data name="Հաշվեհամարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Account number is not selected</value>
+  </data>
+  <data name="Հաշվեհամարը պետք է լինի 12 նիշ։" xml:space="preserve">
+    <value>The account number must contain 12 characters</value>
+  </data>
+  <data name="Հաշվեհամարը սխալ է։" xml:space="preserve">
+    <value>Wrong account number</value>
+  </data>
+  <data name="Հաշվի հաշվեհամարը բացակայում է։" xml:space="preserve">
+    <value>Account number is missing</value>
+  </data>
+  <data name="Հաշվի տեսակը պարտադիր է։" xml:space="preserve">
+    <value>Account type is required</value>
+  </data>
+  <data name="Հաշվի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Account type is not selected</value>
+  </data>
+  <data name="Հավշեհամարը բացակայում է։" xml:space="preserve">
+    <value>Account number is missing</value>
+  </data>
+  <data name="Հարկային հաշիվը նշված չէ։" xml:space="preserve">
+    <value>Tax account is missing</value>
+  </data>
+  <data name="Հարցման պարունակությունը դատարկ է։" xml:space="preserve">
+    <value>Request is empty</value>
+  </data>
+  <data name="Հեռախոսահամար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only for phone number</value>
+  </data>
+  <data name="Հեռախոսահամարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Phone number is missing</value>
+  </data>
+  <data name="Հերթական համարը պարտադիր է։" xml:space="preserve">
+    <value>Phone number is required</value>
+  </data>
+  <data name="Հիմնական քարտի համար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only for main card number field</value>
+  </data>
+  <data name="Հիմնական քարտի համարը լրացված չէ։" xml:space="preserve">
+    <value>Main card number is missing</value>
+  </data>
+  <data name="Հիմնական քարտի համարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Main card number is missing</value>
+  </data>
+  <data name="Ձևանմուշի կարգավիճակն ընտրված չէ։" xml:space="preserve">
+    <value>Template status is not selected</value>
+  </data>
+  <data name="Ձևանմուշի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Template number is missing</value>
+  </data>
+  <data name="Ձևանմուշի ունիկալ համարը նշված չէ։" xml:space="preserve">
+    <value>Template number is missing</value>
+  </data>
+  <data name="Ձևանմուշի ունիկալ համարը պարտադիր է։" xml:space="preserve">
+    <value>Template number is required</value>
+  </data>
+  <data name="Ձևանմուշի տեսակը նշված չէ։" xml:space="preserve">
+    <value>Template number is not selected</value>
+  </data>
+  <data name="Ձևանմուշի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Template number is not selected</value>
+  </data>
+  <data name="Մասնաճյուղն ընտրված չէ։" xml:space="preserve">
+    <value>Branch is not selected</value>
+  </data>
+  <data name="Մարման տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Repayment type is not selected</value>
+  </data>
+  <data name="Մեկանգամյա գաղտնաբառը մուտքագրված չէ։" xml:space="preserve">
+    <value>One time password is missing</value>
+  </data>
+  <data name="Մերժման պատճառը մուտքագրված չէ։" xml:space="preserve">
+    <value>Reject reason is missing</value>
+  </data>
+  <data name="Միջնորդավճարի հաշվեհամարը  դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only to for commission account field</value>
+  </data>
+  <data name="Միջնորդավճարի հաշվեհամարը բացակայում է։" xml:space="preserve">
+    <value>Commission account is missing</value>
+  </data>
+  <data name="Միջնորդավճարի հաշվեհամարը պարտադիր է։" xml:space="preserve">
+    <value>Commission account is required</value>
+  </data>
+  <data name="Սկզբի ամսաթիվը բացակայում է։" xml:space="preserve">
+    <value>Start date is missing</value>
+  </data>
+  <data name="Վերջի ամսաթիվը բացակայում է։" xml:space="preserve">
+    <value>End date is missing</value>
+  </data>
+  <data name="Մուտքագրված տվյալները սխալ են կամ ոչ լիարժեք։" xml:space="preserve">
+    <value>The entered data is incorrect or incomplete.</value>
+  </data>
+  <data name="Մուտքագրվող հաշիվը բացակայում է։" xml:space="preserve">
+    <value>Credit account is missing</value>
+  </data>
+  <data name="Մուտքագրվող հաշվեհամարը բյուջե փոխանցման հաշվեհամար չէ։" xml:space="preserve">
+    <value>Credit account is not a budget account</value>
+  </data>
+  <data name="Մուտքագրվող հաշվեհամարի առաջին նիշը պետք է լինի 9։" xml:space="preserve">
+    <value>The first digit of credit account must be 9</value>
+  </data>
+  <data name="Մուտքագրվող հաշվի արժույթ դաշտը պարտադիր է։" xml:space="preserve">
+    <value>Credit account currency is required</value>
+  </data>
+  <data name="Մուտքագրվող հաշվի հաշվեհամար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only to for credit account field</value>
+  </data>
+  <data name="Մուտքագրվող հաշվի հաշվեհամարը պարտադիր է։" xml:space="preserve">
+    <value>Credit account number is required</value>
+  </data>
+  <data name="Մուտքանունը բացակայում է։" xml:space="preserve">
+    <value>Username is missing</value>
+  </data>
+  <data name="Մուտքանունը լրացված չէ։" xml:space="preserve">
+    <value>Username is not entered</value>
+  </data>
+  <data name="Հաղորդագրության դաշտը պարտադիր է:" xml:space="preserve">
+    <value>Message is required.</value>
+  </data>
+  <data name="Հաղորդագրությունը բացակայում է:" xml:space="preserve">
+    <value>Message is missing.</value>
+  </data>
+  <data name="Հաղորդագրությունը նշված չէ:" xml:space="preserve">
+    <value>Message is missing.</value>
+  </data>
+  <data name="Ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Unique number is missing</value>
+  </data>
+  <data name="Ունիկալ համարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Unique number is missing</value>
+  </data>
+  <data name="Ունիկալ համարը սխալ է։" xml:space="preserve">
+    <value>Ունիկալ համարը սխալ է։</value>
+  </data>
+  <data name="Պատճառն ընտրված չէ։" xml:space="preserve">
+    <value>Reason is not selected</value>
+  </data>
+  <data name="Պարբերական փոխանցման գումարի գանձման եղանակը սխալ է։" xml:space="preserve">
+    <value>The method of charging a periodic transfer amount is incorrect</value>
+  </data>
+  <data name="Պարբերական փոխանցման Փոխանցման նպատակը բացակայում է։" xml:space="preserve">
+    <value>Periodic transfer description is missing</value>
+  </data>
+  <data name="Պարբերական փոխանցման նկարագրությունը պարտադիր է։" xml:space="preserve">
+    <value>Periodic transfer description is required</value>
+  </data>
+  <data name="Պլաստիկ քարտն ընտրված չէ։" xml:space="preserve">
+    <value>Card is not selected</value>
+  </data>
+  <data name="Պրոդուկտի կարգավիճակի ֆիլտրն ընտրված չէ։" xml:space="preserve">
+    <value>Product status filter is not selected</value>
+  </data>
+  <data name="Պրոդուկտի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Product number is missing</value>
+  </data>
+  <data name="Պրոդուկտի ունիկալ համարը լրացված չէ։" xml:space="preserve">
+    <value>Product number is missing</value>
+  </data>
+  <data name="Պրոդուկտի ունիկալ համարը նշված չէ։" xml:space="preserve">
+    <value>Product number is missing</value>
+  </data>
+  <data name="Պրոդուկտի ունիկալ համարը պարտադիր է։" xml:space="preserve">
+    <value>Product number is required</value>
+  </data>
+  <data name="Պրոդուկտի ունիկալ համարը սխալ է։" xml:space="preserve">
+    <value>Wrong product number</value>
+  </data>
+  <data name="Սահմանաչափերն ընտրված չեն։" xml:space="preserve">
+    <value>Limits are not selected</value>
+  </data>
+  <data name="Սահմանաչափի արժեքն ընտրված չէ։" xml:space="preserve">
+    <value>Limit value is not selected</value>
+  </data>
+  <data name="Սահմանաչափի տեսակ ընտրված չէ։" xml:space="preserve">
+    <value>Limit type is not selected</value>
+  </data>
+  <data name="Սկզբի ամսաթիվը լրացված չէ։" xml:space="preserve">
+    <value>Start date is missing</value>
+  </data>
+  <data name="Սկզբի ամսաթիվը նշված չէ։" xml:space="preserve">
+    <value>Start date is missing</value>
+  </data>
+  <data name="Սկզբի ամսաթիվը պարտադիր է։" xml:space="preserve">
+    <value>Start date is required</value>
+  </data>
+  <data name="Սկզբի ամսաթվի արժեքը սխալ է։" xml:space="preserve">
+    <value>Wrong start date</value>
+  </data>
+  <data name="Սկզբնական գումարը նշված չէ։" xml:space="preserve">
+    <value>Initial amount is not entered</value>
+  </data>
+  <data name="Ստացող բանկի կոդը չի համապատասխանում փոխանցվող հաշվեհամարին։" xml:space="preserve">
+    <value>Recipient bank code does not correspond to the recipient account</value>
+  </data>
+  <data name="Ստացողը նշված չէ։" xml:space="preserve">
+    <value>Recipient is missing</value>
+  </data>
+  <data name="Ստացողի անուն ազգանունը բացակայում է։" xml:space="preserve">
+    <value>Recipient Name/Surname is missing</value>
+  </data>
+  <data name="Ներկայացման վայրն ընտրված չէ։" xml:space="preserve">
+    <value>Presentation place is not selected</value>
+  </data>
+  <data name="Վարկային գծի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Credit line type is not selected</value>
+  </data>
+  <data name="Վարկային հաշիվ դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only to for loan account account</value>
+  </data>
+  <data name="Վարկային հաշիվը նշված չէ։" xml:space="preserve">
+    <value>Loan account is missing</value>
+  </data>
+  <data name="Վարկի արժույթն ընտրված չէ։" xml:space="preserve">
+    <value>Loan currency is not selected</value>
+  </data>
+  <data name="Վարկի ունիկալ համար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only to for loan account account</value>
+  </data>
+  <data name="Վարկի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Loan number is missing</value>
+  </data>
+  <data name="Վարկի ունիկալ համարը լրացված չէ։" xml:space="preserve">
+    <value>Loan number is missing</value>
+  </data>
+  <data name="Վարկի ունիկալ համարը սխալ է։" xml:space="preserve">
+    <value>Wrong loan number</value>
+  </data>
+  <data name="Վարկի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Loan type is not selected</value>
+  </data>
+  <data name="Վերաբացման պատճառը բացակայում է։" xml:space="preserve">
+    <value>Reopening reason is missing</value>
+  </data>
+  <data name="Վերաբացվող հաշիվը բացակայում է։" xml:space="preserve">
+    <value>Repopened account is missing</value>
+  </data>
+  <data name="Վերաբացվող հաշվի արժույթը բացակայում է։" xml:space="preserve">
+    <value>Reopened account currency is missing</value>
+  </data>
+  <data name="Վերաբացվող հաշվի հաշվեհամարը բացակայում է։" xml:space="preserve">
+    <value>Reopened account number is missing</value>
+  </data>
+  <data name="Վերնագիրը բացակայում է։" xml:space="preserve">
+    <value>Title is missing</value>
+  </data>
+  <data name="Վերջի ամսաթվի արժեքը սխալ է։" xml:space="preserve">
+    <value>Wrong end date</value>
+  </data>
+  <data name="Տեղեկանքի տեսակը լրացված չէ։" xml:space="preserve">
+    <value>Reference type is not entered</value>
+  </data>
+  <data name="Տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Type is not selected</value>
+  </data>
+  <data name="ՏՀՏ կոդը ընտրված չէ։" xml:space="preserve">
+    <value>LTA code is not selected</value>
+  </data>
+  <data name="Տոկենի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>Token number is missing</value>
+  </data>
+  <data name="Տոկոսագումարի հաշիվը բացակայում է։" xml:space="preserve">
+    <value>Interest account is missing</value>
+  </data>
+  <data name="Տոկոսագումարի հաշվի հաշվեհամար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits onlyfor interest account field</value>
+  </data>
+  <data name="Տոկոսագումարի հաշվի հաշվեհամարը պարտադիր է։" xml:space="preserve">
+    <value>Interest account is  required</value>
+  </data>
+  <data name="Տոկոսադրույքը մուտքագրված չէ։" xml:space="preserve">
+    <value>Interest rate is not entered</value>
+  </data>
+  <data name="Փաստաթղթի համարը դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use numbers only to specify document number</value>
+  </data>
+  <data name="Փոխարկման տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Exchang type is not selected</value>
+  </data>
+  <data name="Փոխանցման եղանակ նշված չէ։" xml:space="preserve">
+    <value>Transfer method is not entered</value>
+  </data>
+  <data name="Փոխանցման համակարգը ընտրված չէ։" xml:space="preserve">
+    <value>Transfer system is not selected</value>
+  </data>
+  <data name="Փոխանցված կարգավիճակի արժեքը սխալ է։" xml:space="preserve">
+    <value>Wrong transfer status</value>
+  </data>
+  <data name="Փոխարժեքի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Exchang type is not selected</value>
+  </data>
+  <data name="Քարտի արժույթն ընտրված չէ։" xml:space="preserve">
+    <value>Card currency is not selected</value>
+  </data>
+  <data name="Քարտի համար դաշտում անհրաժեշտ է մուտքագրել միայն թվանշաններ։" xml:space="preserve">
+    <value>Please use digits only for card number field</value>
+  </data>
+  <data name="Քարտի համարը առավելագույնը կարող է լինել 20 նիշ։" xml:space="preserve">
+    <value>Card number must contain maximum 20 characters</value>
+  </data>
+  <data name="Քարտի համարը բացակայում է։" xml:space="preserve">
+    <value>Card number is missing</value>
+  </data>
+  <data name="Քարտի համարը լրացված չէ։" xml:space="preserve">
+    <value>Card number is not entered</value>
+  </data>
+  <data name="Քարտի համարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Card number is missing</value>
+  </data>
+  <data name="Քարտի համարը պարտադիր է։" xml:space="preserve">
+    <value>Card number is required</value>
+  </data>
+  <data name="Քարտի տեսակը սխալ է։" xml:space="preserve">
+    <value>Wrong card type</value>
+  </data>
+  <data name="Քարտի տեսակն ընտրված չէ։" xml:space="preserve">
+    <value>Card type is not selected</value>
+  </data>
+  <data name="Քարտից քարտ փոխանցման արժույթն ընտրված չէ։" xml:space="preserve">
+    <value>Card-to-card transfer currency is not selected</value>
+  </data>
+  <data name="Քարտից քարտ փոխանցման տվյալները լրացված չեն։" xml:space="preserve">
+    <value>Card-to-card transfer data is not entered</value>
+  </data>
+  <data name="օգտագործողը չունի մուտքագրման իրավունք" xml:space="preserve">
+    <value>օգտագործողը չունի մուտքագրման իրավունք</value>
+  </data>
+  <data name="Ֆայլը բացակայում է։" xml:space="preserve">
+    <value>File is missing</value>
+  </data>
+  <data name="Ֆայլի անունը բացակայում է։" xml:space="preserve">
+    <value>File name is missing</value>
+  </data>
+  <data name="Ֆայլի ունիկալ համարը բացակայում է։" xml:space="preserve">
+    <value>File  number is missing</value>
+  </data>
+  <data name="Ֆայլի տեսակը բացակայում է։" xml:space="preserve">
+    <value>File type is missing</value>
+  </data>
+  <data name="Գաղտնաբառ դաշտը պարտադիր է։" xml:space="preserve">
+    <value>Password is required</value>
+  </data>
+  <data name="AMEX քարտերի համար անհրաժեշտ է փոխանցել հաճախականություն։" xml:space="preserve">
+    <value>Service fee frequency field for amex cards is required.</value>
+  </data>
+  <data name="Անհարժեշտ է լրացնել Ստացողի բանկի SWIFT կոդ կամ Fedwire Routing կոդ։" xml:space="preserve">
+    <value>Fill in the Receiver bank's SWIFT or Fedwire Routing code.</value>
+  </data>
+  <data name="Հաշվի լրացուցիչ նկարգրությունը ընտված չէ:" xml:space="preserve">
+    <value>Account additional description is not selected.</value>
+  </data>
+  <data name="Վճարման մանրամասները մուտքագրված չէ։" xml:space="preserve">
+    <value>Transfer details are missing.</value>
+  </data>
+  <data name="Միջնորդավճարի հաշիվը բացակայում է։" xml:space="preserve">
+    <value>Commission account not selected.</value>
+  </data>
+  <data name="Միջնորդավճարի հաշիվը ընտրված չէ:" xml:space="preserve">
+    <value>Commission account not selected.</value>
+  </data>
+  <data name="Գրանցման հասցեն մուտքագրված չէ։" xml:space="preserve">
+    <value>Registration address is missing.</value>
+  </data>
+  <data name="Ստացողի հաշվեհամարը մուտքագրված չէ։" xml:space="preserve">
+    <value>Beneficiary account is missing.</value>
+  </data>
+  <data name="Ստացողի անվանումը մուտքագրված չէ։" xml:space="preserve">
+    <value>Beneficiary's name is missing.</value>
+  </data>
+  <data name="Փոխանցման եղանակը մուտքագրված չէ։" xml:space="preserve">
+    <value>Transfer method is missing.</value>
+  </data>
+  <data name="Ստացող բանկի տվյալները մուտքագրված չէ։" xml:space="preserve">
+    <value>Beneficiary bank details are missing.</value>
+  </data>
+  <data name="Անուն Ազգանունը բացակայում է։" xml:space="preserve">
+    <value>Name/Surname is missing</value>
+  </data>
+  <data name="Սկիզբ դաշտը լրացված չէ։" xml:space="preserve">
+    <value>Start date is missing.</value>
+  </data>
+  <data name="Ավարտ դաշտը լրացված չէ։" xml:space="preserve">
+    <value>End date is missing.</value>
+  </data>
+  <data name="Ավարտի ամսաթիվը պետք է մեծ լինի սկիզբի ամսաթվից։" xml:space="preserve">
+    <value>End date must be later than start date.</value>
+  </data>
+  <data name="Չտրամադրված" xml:space="preserve">
+    <value>Not Given</value>
+  </data>
+  <data name="Տրամադրված" xml:space="preserve">
+    <value>Given</value>
+  </data>
+  <data name="Ելքագրվող քարտը մուտքագրված չէ։" xml:space="preserve">
+    <value>Debit card is missing</value>
+  </data>
+  <data name="Ստացողի քարտը մուտքագրված չէ։" xml:space="preserve">
+    <value>Beneficiary's card is missing</value>
+  </data>
+  <data name="Սխալ PIN կոդ։" xml:space="preserve">
+    <value>Incorrect PIN code.</value>
+  </data>
+  <data name="Մուտքագրված տվյալներ սխալ են կամ ոչ լիարժեք: Խնդրում ենք ստուգել օգտագործողի անունը և ակտիվացման կոդը։" xml:space="preserve">
+    <value>Wrong data. Please check the username and the activation code.</value>
+  </data>
+  <data name="Տարբեր արժույթով հաշիվների միջև փոխանցում հնարավոր չէ իրականացնել վարկային գծի միջոցների հաշվին։" xml:space="preserve">
+    <value>Transfers between accounts in different currencies cannot be made at the expense of credit line funds.</value>
+  </data>
+  <data name="Սխալ ստուգման օրերի քանակ" xml:space="preserve">
+    <value>Wrong checking days</value>
+  </data>
+  <data name="Գաղտնաբառը պետք է պարունակի առնվազն 6 նիշ։" xml:space="preserve">
+    <value>Password must be at least 6 characters long.</value>
+  </data>
+  <data name="Գաղտնաբառը պետք է պարունակի լատինատառ, թվային նիշ, հատուկ նշաններ։" xml:space="preserve">
+    <value>Password can only contain latin letters, digits and symbols.</value>
+  </data>
+  <data name="Նոր գաղտնաբառը մուտքագրված չէ։" xml:space="preserve">
+    <value>New password is not entered.</value>
+  </data>
+  <data name="Նոր գաղտնաբառի երկու տարբերակները չեն համընկնում։" xml:space="preserve">
+    <value>New passwords do not match.</value>
+  </data>
+  <data name="Նոր և հին գաղտնաբառերը չեն կարող համընկնել։" xml:space="preserve">
+    <value>New password should not match the old one.</value>
+  </data>
+</root>

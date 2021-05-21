@@ -1,0 +1,4 @@
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingLibrary\obj\Debug\netcoreapp3.1\OnlineBankingLibrary.csprojAssemblyReference.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingLibrary\obj\Debug\netcoreapp3.1\OnlineBankingLibrary.AssemblyInfoInputs.cache
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingLibrary\obj\Debug\netcoreapp3.1\OnlineBankingLibrary.AssemblyInfo.cs
+D:\David Projects\OnlineBankingApi\OnlineBankingApi\OnlineBankingLibrary\obj\Debug\netcoreapp3.1\OnlineBankingLibrary.csproj.CoreCompileInputs.cache
